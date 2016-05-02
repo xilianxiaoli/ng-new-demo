@@ -1,0 +1,17 @@
+<ion-view class="zstGg bg" view-title="公告">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-reply backBtn" ng-click="goBackView()"></button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <div class="list bordR5">
+            <a class="item"  ng-repeat="itms in notice.allNotice" href="#/zsTong/noticeDetail/{{$index}}">
+                <ul>
+                    <li>{{itms.title}}</li>
+                    <li>{{itms.time}}</li>
+                </ul>
+                <i class="icon ion-chevron-right slipBtn"></i>
+            </a>
+
+        </div>
+    </ion-content>
+</ion-view>

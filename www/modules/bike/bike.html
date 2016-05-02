@@ -1,0 +1,20 @@
+<ion-view>
+    <ion-tabs class="tabs-icon-left tabs-secondary">
+        <ion-tab title="站点" icon="icon ion-ios-pulse-strong" href="#/bike/station">
+            <ion-nav-view name="bike-station"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="地图" icon="icon ion-map" ng-click="multiBikeMap()">
+            <!--<ion-nav-view name="bike-more"></ion-nav-view>-->
+        </ion-tab>
+        <ion-tab title="卡查询" icon="icon ion-speakerphone" href="#/bike/card">
+            <ion-nav-view name="bike-card"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="服务指南" icon="icon ion-compose" href="#/bike/guide">
+            <ion-nav-view name="bike-guide"></ion-nav-view>
+        </ion-tab>
+       <!-- <ion-tab title="站点地图" class="ng-hide">
+            <ion-nav-view name="bike-map"></ion-nav-view>
+        </ion-tab>-->
+    </ion-tabs>
+</ion-view>
+

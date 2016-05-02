@@ -1,0 +1,67 @@
+<ion-view class="login-regBg" view-title="用户登录">
+    <ion-nav-bar class="bar transparent-bar">
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-reply backBtn"
+                    ng-click="loginGoBackView()"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="loginContent register-loginTitle"  has-bouncing="true">
+        <div style="margin-top: 60px">
+            <div class="list list-inset">
+                <div class="item item-input item-button-right">
+                    <i class="icon ion-ios-person-outline placeholder-icon" style="font-size: 35px; color: #EFF4EC"></i>
+                    <input type="text" placeholder="手机号" ng-model="loginUser.phone">
+                    <button class="button  white-btn" ng-click="showUserHisList()" id="showBtn">
+                        <i class="icon" ng-class="hideUserList ? 'ion-ios-arrow-down':'ion-ios-arrow-up'"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 保存用户登录账号 -->
+            <div style="" class="userHisList" id="uhl">
+                <ion-scroll style="max-height: 170px" has-bouncing="true">
+                    <div class="list">
+                        <div class="item item-button-right" ng-repeat="item in localUser" ng-click="chooseUser(item)">
+                            <img src="img/icon.png" alt="" class="userHead" style=""/>{{item.phone}}
+                            <button class="button button-clear" ng-click="clearHis(item);hideUserList = false">
+                                <i class="icon ion-ios-close"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </ion-scroll>
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-ios-locked-outline placeholder-icon"
+                       style=" margin-right: 2px;font-size: 30px;color: #EFF4EC"></i>
+                    <input type="password" placeholder="密码" ng-model="loginUser.pwd">
+                </label>
+            </div>
+
+            <div class="list toggle-margin">
+                <label class="toggle">
+                    <input type="checkbox" ng-model="loginUser.isSavePwd">
+
+                    <div class="track" style="width: 45px; height: 25px">
+                        <div class="handle" style="width: 21px; height: 21px"></div>
+                    </div>
+                    <span class="savePwd">保存密码</span>
+                </label>
+            </div>
+            <div class="row">
+                <div class="col" style="margin-left: 19px; margin-right: 19px">
+                    <button class="button button-full loginBtn" ng-click="userLogin()">
+                        登 录
+                    </button>
+                </div>
+            </div>
+            <div class="login-bottom">
+                <a href="#/home/userReg">我要注册</a> &nbsp;|&nbsp;
+                <a href="#/home/setNewPassword">忘记密码?</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+

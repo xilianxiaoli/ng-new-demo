@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta content="telephone=no" name="format-detection"/>
+    <title>中山通</title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/bus.css"/>
+    <link rel="stylesheet" href="css/zsTong.css"/>
+    <link rel="stylesheet" href="css/bike.css"/>
+    <link rel="stylesheet" href="css/activity.css"/>
+    <link rel="stylesheet" href="css/user.css"/>
+    <link rel="stylesheet" href="css/estate.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="modules/common/directives/hxToggle/hxToggle.css"/>
+    <link rel="stylesheet" href="modules/common/directives/hMenu/hMenu.css"/>
+    <link rel="stylesheet" href="modules/common/directives/clockDirective/clockStyle.css"/>
+    <link rel="stylesheet" href="lib/skyPlugins/css/default_skin.css"/>
+    <!--<link rel="stylesheet" href="css/all.css"/>-->
+    <script src="cordova.js"></script>
+    <script src="cordova_plugins.js"></script>
+    <script>
+        if((typeof navigator.splashscreen)!='undefined'){
+            navigator.splashscreen.show();//显示启动画面
+        }
+    </script>
+</head>
+<body ng-controller="mainCtr" ng-cloak>
+<!-- 引导动画界面 -->
+<ion-slide-box delegate-handle="guideImageSlide" ng-class="bounceOutLeft" show-pager="false" ng-init="initGuideImage()"  id="wlc" ng-if="isShowGuideImage">
+    <ion-slide ignore-bouncing="right">
+        <img src="img/s1.png"/>
+    </ion-slide>
+    <ion-slide>
+        <img src="img/s2.png"/>
+    </ion-slide>
+    <ion-slide ignore-bouncing="left" on-drag-left="onDragLeft()">
+        <img src="img/s3.png"/>
+    </ion-slide>
+</ion-slide-box>
+<ion-nav-bar class="bar app-bar">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+</ion-nav-bar>
+<!--整个网站的html入口-->
+<ion-nav-view animation="slide-left-right-ios7">
+
+</ion-nav-view>
+<!--整个网站的js入口-->
+<script src="lib/requirejs/require.js" data-main="modules/main"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<ion-view view-title='<img src="img/logo1.png" style="width:92px;height:20px; margin-top:12px;"/>' class="back-ground-view" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button class="button  button-clear" ng-click="toggleRightSideMenu()" style="background: url('img/user_login_normal.png') no-repeat -4px -3px;background-size: 42px 46px; height: 30px; width: 44px">
+        </button>
+        <span class="badge badge-assertive" ng-if="dataUpdateNewTip || appNewVersionTip" style="position: absolute; left: 28px; padding: 5px; bottom: 25px"></span>
+    </ion-nav-buttons>
+    <!--信息图标-->
+ <!--   <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-email" style="color: #FFF">
+        </button>
+    </ion-nav-buttons>-->
+
+    <ion-content class="homeContent" scroll="false">
+        <ion-slide-box auto-play="true" does-continue="true" slide-interval="2000" class="homeSlide">
+            <ion-slide>
+                <img src="img/01.jpg"/>
+            </ion-slide>
+            <ion-slide>
+                <img src="img/02.jpg"/>
+            </ion-slide>
+            <ion-slide>
+                <img src="img/03.jpg"/>
+            </ion-slide>
+            <ion-slide>
+                <img src="img/04.jpg"/>
+            </ion-slide>
+        </ion-slide-box>
+        <div class="row">
+            <div class="col col-33">
+                <a class="button menuBtn" href="#/bike/station"">
+                    <i class="icon iconSize ion-android-bicycle"></i>
+                </a>
+                <div class="menuTitle">自行车</div>
+            </div>
+
+            <div class="col col-33">
+                <a class="button menuBtn" href="#/home/activityHome">
+                    <i class="icon iconSize ion-ribbon-a"></i>
+                </a>
+                <div class="menuTitle">定向越野</div>
+            </div>
+
+            <div class="col col-33">
+                <a class="button menuBtn" ng-click="goestate" href="#/estate/whole">
+                    <i class="icon iconSize ion-ios-home"></i>
+                </a>
+                <div class="menuTitle">物业租售</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-33">
+                <a class="button menuBtn" href="#/zsTong/website">
+                    <i class="icon iconSize ion-android-globe"></i>
+                </a>
+                <div class="menuTitle">中山通</div>
+            </div>
+
+            <div class="col col-33">
+                <a class="button menuBtn" href="#/bus/transfer">
+                    <i class="icon iconSize ion-android-bus"></i>
+                </a>
+                <div class="menuTitle">公交车</div>
+            </div>
+
+        </div>
+<!--
+    &lt;!&ndash;底部信息滚动栏&ndash;&gt;
+        <div class="bar bar-footer corebg">
+            <div class="shell">
+                <div id="div4" class="core"  ng-click="newTask()">
+                    <a ng-click="newTask()">利和广场中央式收费停车场现今开始应用中山通IC卡与牡丹金融IC卡刷卡出入停车场，中央式停车场收费使用中山通刷卡更方便快捷！</a>
+                    <a ng-click="newTask()">温馨提示：采蝶轩部分网点停止中山通充值、消费业务</a>
+                    <a ng-click="newTask()">及时便利店开通中山通</a>
+                </div>
+            </div>
+        </div>-->
+    </ion-content>
+
+</ion-view>
+
+
+<!--
+&lt;!&ndash;详细信息页面&ndash;&gt;
+<script id="new-task.html" type="text/ng-template">
+    <div class="modal">
+        &lt;!&ndash; Modal header bar &ndash;&gt;
+        <ion-header-bar class="bar-secondary bar-positive">
+            <h1 class="title">信息列表</h1>
+            <button class="button" ng-click="closeNewTask()">关闭</button>
+        </ion-header-bar>
+        &lt;!&ndash; Modal content area &ndash;&gt;
+        <ion-content>
+            <form ng-submit="createTask(task)">
+                <div class="list">
+                    <label class="item">
+                        消息一
+                    </label>
+                    <label class="item">
+                        消息二
+                    </label>
+                    <label class="item">
+                        消息三
+                    </label>
+                </div>
+            </form>
+        </ion-content>
+    </div>
+</script>-->

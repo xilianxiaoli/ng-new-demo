@@ -1,0 +1,55 @@
+<ion-view view-title="定向越野" class="sideMenuBg" ng-init="initStart()">
+    <ion-nav-bar class="bar transparent-bar">
+        <ion-nav-back-button ng-click="activityGoBack()"></ion-nav-back-button>
+        <p class="register-loginTitle start_line start_line_height"></p>
+    </ion-nav-bar>
+
+    <ion-content has-bouncing="true" class="activityContent">
+
+        <div class="start-headBg">
+            <div class="row">
+                <div class="col col-50" style="position: relative">
+                    <div class='clock'>
+                        <p>{{clock.hour}}:{{clock.min}}:{{clock.sec}}</p>
+                    </div>
+                    <ion-clock radius="54" style="left: 50%; margin-left: -52px;top: 0px"></ion-clock>
+                </div>
+                <div class="col col-50">
+                    <ion-percent progress="{{progressVal}}"></ion-percent>
+                </div>
+            </div>
+        </div>
+
+            <div id="character-slider" class="sky-carousel sc-no-select">
+                <div class="sky-carousel-wrapper">
+                    <ul class="sky-carousel-container">
+                        <li ng-repeat="item in startLineList.lineObj">
+                            <img src="img/station1.png"  ng-if="item.isScanner == true"/>
+                            <img src="img/station.png"  ng-if="item.isScanner == false"/>
+                            <p>站点{{item.lineNo}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        <div style="text-align: center">
+            <button style="border:none;text-align: center;min-height: 90px; min-width: 90px; font-size: 20px;color: #FFB54A; background-color: transparent"
+                    class="button icon-left ion-qr-scanner scanner-btn" ng-click="barcodeScanner()" >
+                <br/>
+                <p style="color: #FFB54A; font-size: 20px;position: absolute; top: 21px; left: 19px">扫一扫</p>
+            </button>
+            <p class="scannerTip" ng-if="progressVal != 100">下一个扫描的站点:{{nextLine}}</p>
+        </div>
+    </ion-content>
+    <div class="tabs tabs-secondary tabs-icon-left"
+         style="text-align:center;color: #FFF;background-color: transparent; position: absolute; height: 49px; bottom: 0; left: 0; right: 0">
+        <a class="tab-item" href="#/home/activityMap" style="max-width: inherit">
+            <i class="icon ion-android-map"></i>
+            查看地图
+        </a>
+        <a style="height: 50px; width: 1px; border-right:1px solid #c5c5c5;"></a>
+        <a class="tab-item" ng-click="endActivity()" style="max-width: inherit">
+            <i class="icon ion-power"></i>
+            结束活动
+        </a>
+    </div>
+</ion-view>

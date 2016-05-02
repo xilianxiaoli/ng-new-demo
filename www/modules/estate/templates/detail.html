@@ -1,0 +1,91 @@
+<ion-view view-title="{{type==1?'出租':'出售'}}详情" class="detail animated slideInRight back-ground-view">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-reply backBtn" ng-click="goBackView()"></button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header" scroll="true" has-bouncing="true">
+        <ion-slide-box on-slide-changed="setIdx($index)" does-continue="true" show-pager="false" auto-play="true" delegate-handle="detailImgs">
+            <ion-slide ng-repeat="img in imgs">
+                <img ng-src="{{img}}">
+            </ion-slide>
+        </ion-slide-box>
+        <div class="slidePage">
+            {{nowIdx+1}}/{{imgs.length}}
+        </div>
+        <div class="padding houseTop">
+            <div class="houseTitle">{{houseDetail.description}}</div>
+            <div class="housePrice color1" ng-if="type==2">
+                <span class="hPNumber">{{houseDetail.totalPrice}}</span>
+                万元(单价{{houseDetail.houseUnitPrice}}元/m
+                <sup>2</sup>)
+                <!--<s>39万元</s>-->
+            </div>
+            <div class="housePrice color1" ng-if="type==1">
+                <span class="hPNumber">{{houseDetail.monthPay}}</span>
+                元/月
+            </div>
+            <div class="houseTime row">
+                <div class="col">
+                    发布时间{{houseDetail.publishTime}}
+                </div>
+                <!--<div class="col viewTimes">
+                    已有1155人浏览
+                </div>-->
+            </div>
+        </div>
+        <div class="houseMiddle padding">
+            <div><!--房屋关键字-->
+               <!-- <span>板房</span>
+                <span>毛胚</span>
+                <span>南北通透</span>
+                <span>现房</span>-->
+             </div>
+            <div><!--房屋具体信息-->
+                <span><i>首付</i>约{{houseDetail.downPay}}万</span>
+                <span><i>月供</i>约{{houseDetail.monthPay}}</span>
+                <span><i>厅室</i>{{houseDetail.innerIntroduction}}</span>
+                <span><i>面积</i>{{houseDetail.space}}平米</span>
+                <span><i>楼层</i>{{houseDetail.houseFloor}}/{{houseDetail.totalFloor}}层</span>
+                <span><i>朝向</i>{{houseDetail.direction}}</span>
+                <span><i>产权</i>{{houseDetail.ownerTime}}年商品房</span>
+                <span><i>年代</i>{{houseDetail.completeTime}}年</span>
+                <span><i>装修</i>{{houseDetail.decoration}}</span>
+                <span><i>概况</i>{{houseDetail.houseUse}}</span>
+            </div>
+            <div><!--房屋小区-->
+                <span><i>区域</i>{{houseDetail.town}}</span>
+            </div>
+            <div><!--房屋地址-->
+                <span ng-click="singleEstateMap(houseDetail)" class="houseAdd">
+                    <i>地址</i>{{houseDetail.location}}
+                    <b style="color:#ea5900;font-size: 200%;margin-left: 10px" class="ion-ios-location"></b>
+                </span>
+            </div>
+            <!--<div>&lt;!&ndash;房屋家具&ndash;&gt;
+                <span class="isNot">宽带</span>
+                <span>电视</span>
+                <span>沙发</span>
+                <span>洗衣机</span>
+                <span>床</span>
+                <span>冰箱</span>
+                <span>空调</span>
+                <span>暖气</span>
+                <span>衣柜</span>
+                <span>热水器</span>
+            </div>-->
+
+
+        </div>
+        <div class="padding houseBottom">
+            <div class="dscrptLabel">房源描述</div>
+            <div class="dscrptCon padding" ng-bind-html="houseDetail.houseDetail">
+            </div>
+        </div>
+        <div class="houseCall padding">
+            <div><i>联系人:</i>{{houseDetail.contactUser}}</div>
+            <div><i>电话:</i>{{houseDetail.contactPhone}}<a class="ion-ios-telephone" href="tel:{{houseDetail.contactPhone}}">拨号</a></div>
+        </div>
+
+    </ion-content>
+
+</ion-view>

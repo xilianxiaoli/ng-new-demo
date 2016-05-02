@@ -1,0 +1,64 @@
+<ion-view view-title="站点">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-reply backBtn" ng-click="goBackView()"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false">
+        <div class="row borderBottom" style="margin-bottom: 10px">
+            <div class="col">
+                <div class="item inputBorder inputBorderColor">
+                    <button class="lineSearchBtn">查 询</button>
+                    <input type="text" placeholder="请输入站点查询">
+                </div>
+            </div>
+        </div>
+        <div class="button-bar padding-left padding-right" style="width: 80%; margin-left: 10%" ng-init="t=1">
+            <a class="button button-outline button-small button-positive btnTransition" ng-click="t=1"
+               ng-class="{'active' : t}">常用站点</a>
+            <a class="button button-outline button-small button-positive btnTransition" ng-click="t = !t;showNearbyStation()"
+               ng-class="{'active' : !t}">附近站点</a>
+        </div>
+        <ion-scroll class="stationList" ng-if="t" has-bouncing="true">
+            <div class="list">
+                <a class="item item-icon-right" href="#/bus/station-line">
+                    上沙1站
+                </a>
+                <button class="button itemRightBtn">
+                    <i class="icon ion-ios-trash button-dark"></i>
+                </button>
+            </div>
+            <div class="list">
+                <a class="item item-icon-right" href="#/bus/station-line">
+                    下沙2站
+                </a>
+                <button class="button itemRightBtn">
+                    <i class="icon ion-ios-trash button-dark"></i>
+                </button>
+            </div>
+            <div class="list">
+                <a class="item item-icon-right" href="#/bus/station-line">
+                    下沙2站
+                </a>
+                <button class="button itemRightBtn">
+                    <i class="icon ion-ios-trash button-dark"></i>
+                </button>
+            </div>
+            <div class="list">
+                <a class="item item-icon-right" href="#/bus/station-line">
+                    车公庙站
+                </a>
+                <button class="button itemRightBtn">
+                    <i class="icon ion-ios-trash button-dark"></i>
+                </button>
+            </div>
+
+        </ion-scroll>
+        <ion-scroll class="stationList" ng-if="!t" has-bouncing="true">
+
+                <div style="width: 100%; height: 500px" id="showStation">
+
+            </div>
+
+
+        </ion-scroll>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,38 @@
+<ion-view view-title="线路">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-reply backBtn" ng-click="goBackView()"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false">
+        <div class="row">
+            <div class="col">
+                <div class="item inputBorder inputBorderColor">
+                    <button class="lineSearchBtn" ng-click="busLineSearch(lineName)">查 询</button>
+                    <input type="text" placeholder="请输入线路查询" ng-model="lineName"><div id="l-map" style="display: none"></div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: 10px;font-size: 20px; font-weight: bold; border-bottom: 1px solid #6e9c2d"
+             class="padding-bottom">
+            历史线路
+        </div>
+        <ion-scroll class="lineList" has-bouncing="true">
+            <div class="list" ng-repeat="historyLineItem in historyLine">
+                <a class="item item-icon-right" href="#/bus/line-detail/{{$index}}">
+                    <span class="lineNo">{{historyLineItem.lineId}}</span> <span>开往 {{historyLineItem.destination}}</span>
+                </a>
+                <button class="button itemRightBtn">
+                    <i class="icon ion-ios-trash button-dark"></i>
+                </button>
+            </div>
+
+
+
+        </ion-scroll>
+        <div class="footerBtn">
+            <a class="button-positive button-block queryAllBus" href="#/bus/line-all"><i class="icon ion-android-bus"
+                                                                                         style="color: #387EF5; font-size: 26px;"></i>
+                查看所有公交线路 <i class="icon ion-chevron-right button-dark"></i></a>
+        </div>
+    </ion-content>
+</ion-view>

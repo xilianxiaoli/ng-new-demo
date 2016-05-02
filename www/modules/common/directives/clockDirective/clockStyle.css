@@ -1,0 +1,83 @@
+
+
+.clock-content{
+    display: block;
+    position: absolute;
+}
+svg {
+    overflow: visible;
+}
+svg line {
+    stroke-linecap: round;
+}
+svg .minilines {
+    stroke: #FFF;
+    stroke-width: 1px;
+}
+svg .microlines {
+    stroke: #aaa;
+    stroke-width: 1px;
+}
+svg .second {
+    stroke: #C00;
+    stroke-width: 1px;
+}
+svg .minute {
+    stroke: #0A0;
+    stroke-width: 2px;
+}
+svg .hour {
+    stroke-width: 3px;
+    stroke: #eee;
+}
+
+div.bottom {
+    background: #000;
+}
+
+.digital-clock {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+}
+.digital-clock span {
+    display: inline-block;
+    width: 200px;
+    height: 160px;
+    background: #FFF;
+    color: #000;
+    margin-left: 20px;
+    font-size: 140px;
+    text-align: center;
+    line-height: 160px;
+    font-family: Rajdhani, sans-serif;
+    font-weight: bold;
+}
+.digital-clock span:first-of-type {
+    margin-left: 0;
+}
+
+a.iprodev {
+    line-height: normal;
+    font-family: Varela Round, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 13px;
+    color: #A7AAAE;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    border: 1px solid #A7AAAE;
+    padding: 12px 20px 10px;
+    border-radius: 50px;
+    transition: all .1s ease-in-out;
+    text-transform: uppercase;
+}
+a.iprodev:hover {
+    background: #A7AAAE;
+    color: #fff;
+}
+
+

@@ -1,0 +1,21 @@
+<ion-view view-title="所有线路">
+    <ion-content scroll="false">
+        <div class="row borderBottom">
+            <div class="col">
+                <div class="item inputBorder inputBorderColor">
+                    <i class="icon ion-search placeholder-icon"
+                       style="color: #6e9c2d; position: absolute; left: 100%; margin-left: -26px; font-size: 22px; top: 50%; margin-top: -11px;"></i>
+                    <input type="text" placeholder="输入线路列表中过滤">
+                </div>
+            </div>
+        </div>
+        <ion-scroll class="allLineList" has-bouncing="true">
+        <div class="list" ng-repeat="lineItem in allLine">
+            <a class="item item-icon-right" href="#/bus/line-detail/{{$index}}">
+                <span class="lineNo">{{lineItem.lNumber}}</span> <span>开往 {{lineItem.lEnd}}</span>
+                <i class="icon ion-chevron-right" style="font-size: 18px"></i>
+            </a>
+        </div>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+@charset "utf-8";
+/*中山通服务全局css*/
+.zstWd a,.zstGg a,.zstFw a{text-decoration: none}
+
+/*中山通网点css*/
+/*.zstWd .list{opacity: 0.8}*/
+.zstWd .bordR5{border-radius: 5px}
+.zstWd .bordR5 .item-divider:first-child{border-radius:5px 5px 0 0;}
+.zstWd .bordR5 div:last-child .item:last-child{border-radius:0 0 5px 5px}
+.zstWd .item-divider{min-height: 45px;padding-top: 12px;background-color: #c6cbdd;font-weight: bold;border-top-color: #fff;color:#000;}
+.zstWd .item-divider:active{background-color: #989898}
+.zstWd .item {padding: 12px 9px 7px 9px;}
+.zstWd a.item{background-color: #fff;}
+.zstWd .item li{font-size: 12px;color: #64919c;line-height: 18px}
+.zstWd .item li:nth-child(1){font-size: 14px;font-weight: bold;color: #5d4616;margin-bottom: 5px}
+.zstWd .item li:nth-child(2){max-width:80%;display:block;white-space: pre-line; overflow:hidden; text-overflow:ellipsis}
+.zstWd .slipBtn{position: absolute;right: 15px;top:50%;margin-top: -10px}
+.zstWd .ion-ios-telephone:before,.zstWd .ion-ios-location:before{color: #9d9aff;  }
+.zstWd .ion-chevron-right:before{font-size: 12px}
+
+/*中山通公告css*/
+
+.zstGg .list{opacity: 1}
+.zstGg .item{padding: 5px 16px 5px 16px;border-color: #dcdcdc}
+.zstGg .item:nth-of-type(even){background-color: #cfcfcf  }
+.zstGg .slipBtn{position: absolute;right: 20px;top:30%}
+.zstGg .item li{font-size: 12px;color: #8f8f8f;line-height: 18px}
+.zstGg .item li:nth-child(1){font-size: 14px;font-weight: bold;color: #222;margin-bottom: 5px;max-width:80%;white-space:pre-wrap;line-height: 20px}
+.zstGg .ion-chevron-right:before{font-size: 12px}
+.zstGg a.item:active{background-color: #8a8a8a}
+.zstGg .item-text-wrap{border-radius: 4px;opacity: 1;background: #fff;color: #222;line-height: 25px}
+.zstGg h4{width: 100%;text-align: center}
+
+
+
+

@@ -1,0 +1,28 @@
+<ion-view view-title="借车记录" class="back-ground-view bikeBorrowDetail">
+    <ion-content has-bouncing="true" class="padding-vertical">
+        <ul class="list">
+            <li class="item" ng-repeat="queryResultItem in queryResult">
+                <address class="borderBottom">
+                    <h2 style=" border-color: #42ac3a;">借车信息</h2>
+                    <div class="bikeBorrowDetailInfo"><i class="icon ion-android-pin" style="color: #0cc3f0; font-size: 24px"></i>地点: {{queryResultItem.borrowAddress}}</div>
+                    <div class="bikeBorrowDetailInfo">
+                        <time datetime="2015/3/16 21:46:06">
+                            <i class="icon ion-android-time" style="color: #0cc3f0; font-size: 19px"></i>时间:  {{queryResultItem.borrowTime}}
+                        </time>
+                    </div>
+                </address>
+                <address>
+                    <h2 style=" border-color: #2e87c8;">还车信息</h2>
+                    <div class="bikeBorrowDetailInfo"><i class="icon ion-android-pin" style="color: #0cc3f0; font-size: 24px"></i>地点: {{queryResultItem.backAddress}}</div>
+                    <div class="bikeBorrowDetailInfo">
+                        <time datetime="2015/3/16 21:46:06">
+                            <i class="icon ion-android-time" style="color: #0cc3f0; font-size: 19px"></i>时间: {{queryResultItem.backTime}}
+                        </time>
+                    </div>
+                </address>
+            </li>
+        </ul>
+        <p ng-if="queryResult.length == 0" style="text-align: center;color: rgb(153, 153, 153); font-size: 22px;margin-top: 100px">暂无借车记录</p>
+    </ion-content>
+
+</ion-view>

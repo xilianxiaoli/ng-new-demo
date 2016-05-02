@@ -1,0 +1,175 @@
+
+.hMenu{
+    position: relative;
+    width: 100%;
+    height: 44px;
+    border-bottom: 1px solid #D7D8D8;
+}
+/*主按钮css************************************/
+/*休眠状态*/
+.mainButtons{
+    line-height: 41px;
+    overflow: hidden;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+}
+.mainButtons>li{
+    float: left;
+    position: relative;
+    height: 44px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    padding: 5px;
+    width: 100%;
+}
+.mainButtons>li:last-child i{display: none}
+.mainButtons>li>span{
+    position: absolute;
+    width: 90%;
+    left: 0;
+}
+.mainButtons>li>i{
+    position: absolute;
+    width: 10%;
+    right: 0;
+    color: #D7D8D8;
+}
+.mainButtons>li b:after{
+    display: inline-block;
+    font-family: "Ionicons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f104";
+    padding-left: 4px;
+    font-size: 80%;
+    color: #D7D8D8;
+}
+/*激活状态*/
+.mainButtons>.activity b{
+    color: #ff6a22;
+}
+.mainButtons>.activity b:after{
+    content: '\f10d';
+    color: red;
+}
+
+/*一级菜单、按钮css******************************/
+.firstMenu{
+    display: none;
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    border-top: 1px solid #dedfe0;
+}
+.firstMenu li{
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #dedfe0;
+    padding: 0 10px;
+}
+/*二级菜单、按钮css******************************/
+.secondMenu{
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    z-index: 12;
+    height: 300px;
+    background-color: white;
+    border:solid cadetblue;
+    border-width: 1px 0 0 1px ;
+}
+.secondMenu li{
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #dedfe0;
+    padding: 0 10px;
+}
+
+
+
+/*更多一级菜单css********************************/
+.moreFirstMenu{
+    display: none;
+    position: absolute;
+    z-index: 13;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    border-top: 1px solid #dedfe0;
+}
+.moreFirstMenu li{
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #dedfe0;
+    padding: 0 10px;
+}
+.moreFirstMenu li span{
+    float: right;
+    color: #D7D8D8;
+}
+.moreFirstMenu button{
+    display: inherit;
+    width:90%;
+    margin:10px auto;
+}
+
+/*更多二级菜单css**************************************/
+.moreSecondMenu{
+    display: none;
+    position: absolute;
+    z-index: 14;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    border-top: 1px solid cadetblue;
+    overflow: hidden;
+}
+.moreSecondMenu li{
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #dedfe0;
+    padding: 0 10px;
+}
+.moreSecondMenu li:active,.moreFirstMenu li:active,.firstMenu li:active{
+    background-color: #D9D9D9;
+    border-color: #CCC;
+}
+.moreSecondMenu button{
+    width:90%;
+    margin:10px auto;
+}
+/*遮罩css*/
+#hMenuMask{
+    position: absolute;
+    top: 385px;
+    bottom: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color:rgba(11,0,0,0.5);
+
+}

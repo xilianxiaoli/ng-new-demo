@@ -1,0 +1,21 @@
+
+<ion-view id="estateIonView">
+    <ion-tabs class="tabs-icon-left tabs-stable"  ng-class="{'tabs-item-hide': hideTabs}">
+        <ion-tab title="全城" icon="icon ion-grid" href="#/estate/whole">
+            <ion-nav-view name="estate-whole"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="附近" icon="icon ion-ios-location" href="#/estate/near">
+            <ion-nav-view name="estate-near"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="地图" icon="icon ion-android-map" ng-click="multiEstateMap()">
+            <!--<ion-nav-view name="estate-map"></ion-nav-view>-->
+        </ion-tab>
+        <ion-tab title="详细" class="ng-hide">
+            <ion-nav-view name="estate-detail"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="物业地图"  class="ng-hide">
+            <ion-nav-view name="estate-detailMap"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>
+

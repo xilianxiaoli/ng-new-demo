@@ -1,0 +1,36 @@
+<ion-view view-title="线路信息">
+    <ion-content scroll="false">
+        <ul class="list" style="margin-bottom: 4px">
+            <li class="item"><strong>候车站点</strong>: <strong style="color: red">车公庙</strong></li>
+        </ul>
+        <div class="button-bar padding-left padding-right" style="width: 80%; margin-left: 10%">
+            <a class="button button-outline button-small button-positive btnTransition"
+               ng-repeat="bus in busDirection"
+               ng-click="data.initDirec = bus.value"
+               ng-class="{'active' : bus.value === data.initDirec}">开往{{bus.text}}</a>
+        </div>
+        <ion-content class="scrollPosition" direction="x">
+            <div class="stationContent" ng-if="data.initDirec=='up'">
+                <div class="stationBar" ng-repeat="item in stationList[0]">
+                    <div class="stationCircle" ng-class="{'thisCircle' : item.value == '车公庙'}"></div>
+                    <div class="stationTitle" ng-class="{'thisStation' : item.value == '车公庙'}">
+                        {{item.id}}{{item.value}}
+                    </div>
+                </div>
+            </div>
+            <div class="stationContent" ng-if="data.initDirec=='down'">
+                <div class="stationBar" ng-repeat="item in stationList[1]">
+                    <div class="stationCircle" ng-class="{'thisCircle' : item.value == '车公庙'}"></div>
+                    <div class="stationTitle" ng-class="{'thisStation' : item.value == '车公庙'}">
+                        {{item.id}}{{item.value}}
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+
+        <div class="footerBtn">
+            <a class="button-positive button-block busInfo">
+                首末班服务时间: 06:00-22:00 全程8元</a>
+        </div>
+    </ion-content>
+</ion-view>

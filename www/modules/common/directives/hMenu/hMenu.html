@@ -1,0 +1,32 @@
+
+<div class="hMenu">
+    <ul class="mainButtons">
+        <li ng-repeat="m in showMenuData" data-son="{{m}}"><span><b>{{m.name}}</b></span><i>|</i></li>
+        <li data-more="true" data-son="{{hideMenuData}}" ng-if="hideMenuData.length"><span><b>更多</b></span><i>|</i></li>
+    </ul>
+
+    <ion-scroll class="firstMenu" has-bouncing="true" delegate-handle="firstMenu">
+        <ul>
+            <li ng-repeat="dis in firstMenu" data-son="{{dis.include||''}}" data-value="{{dis.name||dis}}">
+                {{dis.name||dis}}{{$index!==0?suffix:''}}
+            </li>
+        </ul>
+    </ion-scroll>
+    <ion-scroll class="moreFirstMenu" has-bouncing="true" delegate-handle="moreFirstMenu">
+        <ul>
+            <li ng-repeat="mf in moreFirstMenu" data-son="{{mf}}">
+                <i>{{mf.name}}</i>
+                <span class="icon ion-ios-arrow-right color2" style="font-size: 25px;margin-left: 10px;"></span> <span></span>
+            </li>
+        </ul>
+        <button style="display:inherit" class="button button-block button-outline button-assertive">查 询</button>
+    </ion-scroll>
+    <div class="moreSecondMenu">
+        <ion-scroll  has-bouncing="true" style="max-height: 220px" delegate-handle="moreSecondMenu">
+            <ul>
+                <li ng-repeat="ms in moreSecondMenu" data-value="{{ms.name||ms}}">{{ms.name||ms}}{{$index!==0?suffix:''}}</li>
+            </ul>
+        </ion-scroll>
+        <button style="display:inherit" class="button button-block button-outline button-assertive">返回</button>
+    </div>
+</div>

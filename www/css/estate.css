@@ -1,0 +1,286 @@
+.whole {
+    text-align: left;
+    font-weight: bold;
+
+}
+
+.whole * {
+    padding: 0;
+}
+
+/*头部切换css*/
+.whole_headCenter {
+    width: 130px;
+    left: 50%;
+    position: absolute;
+    margin-left: -65px;
+    height: 30px;
+    bottom: 7px;
+    z-index: 10;
+
+}
+
+
+
+
+
+/*whole内容部分css*/
+
+.whole .oItem {
+    color: #434343;
+    margin: 0;
+    padding: 10px;
+    -webkit-padding-start: 10px;
+    height: 100px;
+    border-bottom: 1px solid #D7D8D8;
+}
+.whole .oItem.activated{
+    background-color: #D9D9D9;
+    border-color: #CCC;
+}
+
+.whole .cdtion .ion-ios-color-filter-outline:before{
+    font-size: 140%;
+}
+.whole .cdtion{
+    font-size: 90%;
+    color: #979898;
+    border-bottom: 1px solid #D7D8D8;
+    height: 40px;
+}
+.whole .cdtion span{
+    margin: 0 5px;
+    line-height: 40px;
+}
+.whole .cdtion span.activated{
+    opacity: 0.5;
+}
+.whole .ihas-header{
+    top:88px;
+}
+
+.whole .oItem img {
+    max-width: 110px;
+    max-height: 80px;
+}
+
+.whole .imgWrap {
+    /*这里只兼容了chrome*/
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    background-size: 60px 60px
+}
+.whole .imgWrap {
+    background: url('../img/defaultImgBg.jpg'); background-size: 100% 100%; background-position: top center;
+}
+.noPic{
+    background: url('../img/defaultImgBg.jpg') center center no-repeat;
+}
+.whole .oItem > .col:first-child {
+    background-color: #f2f2f2;
+    width: 110px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 110px;;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 110px;;
+    -ms-flex: 0 0 110px;;
+    flex: 0 0 110px;;
+    max-width: 110px;;
+}
+
+.whole .oItem > .col:last-child {
+    margin-left: 10px;
+    line-height: 22px;
+}
+
+.whole .oItemCon .row:first-child .col {
+    font-size: 110%;
+    margin-bottom: 5px;
+    line-height: 20px;
+}
+
+.whole .oItemCon .row:nth-child(2) .col {
+    font-size: 85%;
+    color: #bfbfbf;
+    margin-bottom: 5px;
+}
+
+.whole .oItemCon .row:nth-child(3) .col {
+    color: #fd5604
+}
+
+/*detail css*/
+.detail ion-content {
+    background-color: #f6f5f6;
+    color: #434343;
+}
+
+.detail ion-slide-box {
+    width: 100%;
+    height: 100%;
+}
+
+.detail ion-slide img {
+    width: 100%;
+}
+
+.detail .slidePage {
+    text-align: center;
+    color: white;
+    background-color: rgba(18, 16, 15, 0.5);
+    width: 40px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    top: 180px;
+    border-radius: 3px;
+    right: 10px
+}
+
+.detail .color1 {
+    color: #acacac
+}
+
+.detail .hPNumber {
+    color: #fd5604;
+    font-size: 130%;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.detail .houseTop {
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.detail .houseMiddle {
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.detail .houseTitle {
+    font-weight: bold;
+    font-size: 115%;
+    line-height: 22px;
+}
+
+.detail .housePrice {
+    padding: 7px 0;
+}
+
+.detail .houseTime .col, .detail .row {
+    padding: 0;
+    font-size: 95%;
+    color: #acacac;
+}
+
+.detail .viewTimes {
+    text-align: right;
+}
+
+.detail .houseMiddle > div {
+    padding: 15px 0;
+    border-bottom: 1px solid #dfe0df;
+}
+
+.detail .houseMiddle > div span {
+    display: inline-block;
+    min-width: 48%;
+    font-size: 110%;
+    letter-spacing: 1px;
+    font-weight: bold;
+
+}
+
+.detail .houseMiddle > div span.houseAdd.activated{
+    opacity: 0.6;
+}
+
+.detail .houseMiddle > div span i {
+    color: #acacac;
+    padding-right: 10px;
+    word-spacing: 0;
+
+}
+
+.detail .houseMiddle > div:first-child span, .detail .houseMiddle > div:nth-child(5) span {
+    min-width: inherit;
+    padding: 5px;
+    border: 1px solid #c15b43;
+    color: #c15b43;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.detail .houseMiddle > div:nth-child(5) {
+    border-bottom: none;
+    padding: 15px 0 0;
+}
+
+.detail .houseMiddle > div:nth-child(5) span {
+    margin-bottom: 10px;
+}
+
+.detail .houseMiddle > div:nth-child(5) .isNot {
+    border: 1px solid #dfe0df;
+    color: #acacac;
+    text-decoration: line-through;
+}
+
+.detail .houseBottom, .detail .houseCall {
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.detail .houseBottom .dscrptLabel {
+    text-indent: 10px;
+    border-left: 4px solid #ff6a22;
+    font-size: 110%;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.detail .houseBottom .dscrptCon {
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.detail .houseCall div {
+    padding: 7px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.detail .houseCall div i {
+    display: inline-block;
+    color: #ff6a22;
+    width: 60px;
+}
+
+.detail .houseCall div:nth-child(2) a {
+    display: inline-block;
+    width: 60px;
+    padding: 5px;
+    background-color: #ff6a22;
+    margin-left: 15px;
+    text-align: center;
+    color: white;
+    font-weight: normal;
+
+}
+
+.detail .houseCall div:nth-child(2) a.activated {
+    background-color: #58250c;
+}
+
+.detail .houseCall .ion-ios-telephone:before {
+    font-size: 120%;
+}
+.conditionRemove{
+    border:1px solid #E8E8E8;
+    color:red
+}
+
+
+

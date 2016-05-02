@@ -1,0 +1,57 @@
+<ion-view class="login-regBg" view-title="用户注册" cache-view="false">
+    <ion-nav-bar class="bar transparent-bar">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="regContent register-loginTitle" has-bouncing="true">
+        <form role="form" name="registerForm" style=" margin-top: 20px;">
+            <div class="list padding">
+                <label class="item item-input">
+                    <span class="input-label"><span class="mark">*</span>手机号码: </span>
+                    <div class="inputNumber">
+                        <input type="number" placeholder="11位数字"  ng-model="regUser.phone"
+                               required style="background-color: transparent">
+                    </div>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">中山通卡号: </span>
+                    <div class="inputNumber">
+                        <input type="number" placeholder="9位数字" ng-model="regUser.card"
+                               style="background-color: transparent"/>
+                    </div>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><span class="mark">*</span>密码: </span>
+                    <input type="password" ng-model="regUser.pwd" placeholder="6-16位数字或者字母" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><span class="mark">*</span>确认密码: </span>
+                    <input type="password" placeholder="确认密码" ng-model="regUser.rePwd" required>
+                </label>
+
+                <div class="item item-input item-button-right">
+                    <span class="input-label"><span class="mark">*</span>验证码: </span>
+                    <input type="text" placeholder="验证码" ng-model="regUser.imgCode" minlength="4" maxlength="4"
+                           required>
+                    <img ng-src="{{imgCodeSrc}}" class="button imgCode"
+                         style="min-width: 60px; min-height: 20px; top: 13px;right: 5px" ng-init="getImgCode()"
+                         ng-click="getImgCode()"/>
+                </div>
+
+                <div class="registerProtocol">
+                    <div class="item item-checkbox">
+                        <label class="checkbox checkbox-balanced">
+                            <input type="checkbox" ng-model="regUser.protocol" required>
+                        </label>
+                    </div>
+                    <span>同意《<a ng-click="readProtocol()" style="color: #1d3f94">注册协议</a>》</span>
+                </div>
+            </div>
+            <div class="padding-horizontal">
+                <button class="button button-balanced button-full loginBtn" ng-click="userRegister1()"
+                        ng-disabled="registerForm.$invalid">
+                    下 一 步
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

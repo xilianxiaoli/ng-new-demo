@@ -1,0 +1,33 @@
+<ion-view view-title="关于中山通">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-reply backBtn" ng-click="goBackView()"></button>
+    </ion-nav-buttons>
+    <ion-content has-bouncing="true" class="aboutContent" style="bottom: 22px">
+        <div class="row">
+            <div class="col">
+                <img src="img/icon.png"/>
+                <h3>中山通</h3>
+                <div>V {{appVersion}}</div>
+            </div>
+        </div>
+        <div class="list">
+            <a class="item" ng-if="!appNewVersionTip">版本更新
+                <span class="item-note assertive">已是最新版本</span>
+            </a>
+            <a class="item" ng-click="AppUpdate()" ng-if="appNewVersionTip">版本更新
+                <span class="badge badge-assertive" style="right: 14px;">new</span>
+            </a>
+            <a class="item item-icon-right" ng-click="temp = !temp ;subtool()" ng-init="temp=0">功能介绍
+                <i class="icon" ng-class="temp ? 'ion-ios-arrow-up':'ion-ios-arrow-down'"></i>
+            </a>
+            <p class="dark padding" id="subtool">
+                中山通手机应用的用户是普通市民，应容易上手，有很好的用户体验，
+                同时支持安卓和苹果手机。中山通手机应用所提供的功能非常贴近市民日常生活，通过打造这些刚需功能，提高用户的粘性。
+            </p>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer">
+        <div class="title">Copyright &copy; 2014-2015 hxSmart All Rights Reserved</div>
+    </div>
+</ion-view>
+

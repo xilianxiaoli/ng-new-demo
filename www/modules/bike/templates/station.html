@@ -1,0 +1,221 @@
+<ion-view class="zxcFw bg" view-title="自行车站点" ng-init="initBike()">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-reply backBtn" ng-click="goBackView()"></button>
+    </ion-nav-buttons>
+    <!--信息图标-->
+  <!--  <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-email" style="color: #FFF">
+        </button>
+    </ion-nav-buttons>-->
+    <ion-content id="otfen" class="has-header" scroll="false">
+        <!-- 搜索条-->
+        <div class="list search" ng-controller="searchCtrl">
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="搜索" ng-model="keyWork">
+                </label>
+                <button class="button button-small searchBtn" ng-click="search()">
+                    搜索
+                </button>
+            </div>
+        </div>
+        <!-- 切换按钮-->
+        <ul class="bikeToggle">
+            <li ng-class="bikeToggle[0]" ng-click="tab(0)">收藏</li>
+            <li ng-class="bikeToggle[1]" ng-click="tab(1)">附近</li>
+            <li ng-class="bikeToggle[2]" ng-click="tab(2)">区域</li>
+        </ul>
+        <!--收藏-->
+        <ion-scroll ng-if="showNum==0" delegate-handle="oftenBike" has-bouncing="true" class="bikeScroll">
+            <!--下拉刷新-->
+            <ion-refresher spinner="ios-small" pulling-text="正在刷新" on-refresh="doRefresh(0)"></ion-refresher>
+
+            <ion-list hx-html-null="oftenStation" tip="暂时没有内容，请添加收藏!">
+                <ion-item class="item" ng-repeat="often in oftenStation track by $index">
+                    <div class="row">
+                        <div class="col stnWord" ng-click="toMap(often)">
+                            <div class="row">
+                                <div class="col stnName">
+                                    {{often.name}}
+                                    <ion-spinner icon="ios-small" class="stnFresh"></ion-spinner>
+                                </div>
+                                <div class="col bikeParking">
+                                    可借：<span>{{often.availBike}}</span>
+                                    可停：<span>{{often.capacity-often.availBike}}</span>
+                                </div>
+                            </div>
+                            <div class="row stnAdds">
+                                <div class="col col-90 titleOver">
+                                    {{often.address}}
+                                </div>
+                                <div class="col col-10">
+                                    <span class="ion-ios-location ionCols"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-60px stnDel" ng-click="tiggleOften(often.id,0);removeNearStyle(often.id)">
+                            <i class="icon ion-trash-a"></i>
+                        </div>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </ion-scroll>
+        <!--附近-->
+        <div ng-if="showNum==1">
+            <!--筛选下拉框-->
+            <div class="list" style="  margin-bottom: 0;">
+                <label class="item item-input item-select" style="margin: 0 auto;">
+                    <div class="input-label" style="padding: 7px 10px 7px 16px;">
+                        距离
+                    </div>
+                    <select ng-model="range.rangeName"  style="padding: 5px 48px 6px 16px;" data-ng-change="rangeChange(range.rangeName)">
+                        <option value="1000">1000米</option>
+                        <option value="2000">2000米</option>
+                        <option  value="3000">3000米</option>
+                    </select>
+                </label>
+            </div>
+
+            <ion-scroll  delegate-handle="nearBike" has-bouncing="true" class="bikeScroll" style=" top: 154px;">
+            <!--下拉刷新-->
+            <ion-refresher spinner="ios-small" pulling-text="正在刷新" on-refresh="doRefresh(1)"></ion-refresher>
+            <ion-list>
+                <ion-item ng-repeat="fuJin in nearStationObj.nearStation | orderBy:'distance' track by $index" id="{{'fuJin'+fuJin.id }}">
+                    <div class="row">
+                        <div class="col stnWord" ng-click="toMap(fuJin)">
+                            <div class="row">
+                                <div class="col stnName">
+                                    {{fuJin.name}}
+                                    <ion-spinner icon="ios-small" class="stnFresh"></ion-spinner>
+                                </div>
+                                <div class="col bikeParking">
+                                    可借：<span>{{fuJin.availBike}}</span>
+                                    可停：<span>{{fuJin.capacity-fuJin.availBike}}</span>
+                                </div>
+                            </div>
+                            <div class="row stnAdds">
+                                <div class="col col-80 titleOver">
+                                    {{fuJin.address}}
+                                </div>
+                                <div class="col col-20">
+                                    <span class="ion-ios-location ionCols"></span>
+                                    <span class="disTitle">{{fuJin.distance}}米</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-60px stnAdd" ng-click="nearAddOften(fuJin.id,$index)">
+                            <i class="icon ion-ios-heart-outline" ng-if="!fuJin.often"></i>
+                            <i class="icon ion-ios-heart" ng-if="fuJin.often"></i>
+                        </div>
+                    </div>
+                </ion-item>
+            </ion-list>
+            <ion-infinite-scroll  spinner="ios-small" on-infinite="appendNearBike()" distance="1%" immediate-check="false" ng-if="nearInfinitDown">
+            </ion-infinite-scroll>
+                <p class="noResult" ng-if="nearStationObj.nearStation.length == 0 && iCurrent.length != 0">
+                    <i class="icon ion-android-sad"></i>
+                    <span>附近暂无自行车站点</span>
+                </p>
+                <p class="noResult" ng-if="iCurrent.length == 0">
+                    <i class="icon ion-android-sad"></i>
+                    <span><a ng-click="reGetLocation()">点击重新获取当前位置信息</a></span>
+                </p>
+        </ion-scroll>
+    </div>
+        <!--全部-->
+        <div ng-if="showNum==2">
+            <div class="list" style="  margin-bottom: 0;">
+                <label class="item item-input item-select" style="margin: 0 auto;">
+                    <div class="input-label" style="padding: 7px 10px 7px 16px;">
+                        区域
+                    </div>
+                    <select style="padding: 5px 48px 6px 16px;" data-ng-model="areaName" data-ng-change="areaChange(areaName)">
+                        <option value="所有站点" selected>所有站点</option>
+                        <option ng-repeat="a in areas">{{a}}</option>
+                    </select>
+                </label>
+            </div>
+            <!-- 分区站点-->
+            <ion-scroll ng-if="areaName!=='所有站点'"  delegate-handle="areaBike" has-bouncing="true" class="bikeScroll" style=" top: 154px;">
+                <!--下拉刷新-->
+                <ion-refresher pulling-text="正在刷新" on-refresh="doRefresh(3,areaName)" spinner="ios-small"></ion-refresher>
+
+                <ion-list hx-html-null="areaStation" tip="该区域无任何站点!">
+                    <div ng-repeat="area in areaStation track by $index" id="{{'area'+area.id}}">
+                        <ion-item class="item">
+                            <div class="row">
+                                <div class="col stnWord" ng-click="toMap(area)">
+                                    <div class="row">
+                                        <div class="col stnName">
+                                            {{area.name}}
+                                            <ion-spinner icon="ios-small" class="stnFresh"></ion-spinner>
+                                        </div>
+                                        <div class="col bikeParking">
+                                            可借：<span>{{area.availBike}}</span>
+                                            可停：<span>{{area.capacity-area.availBike}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="row stnAdds">
+                                        <div class="col col-90 titleOver">
+                                            {{area.address}}
+                                        </div>
+                                        <div class="col col-10">
+                                            <span class="ion-ios-location ionCols"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-60px stnAdd" ng-click="tiggleOften(area.id,1,2);markNear(area.id)">
+                                    <i class="icon ion-ios-heart-outline" ng-if="!area.often"></i>
+                                    <i class="icon ion-ios-heart" ng-if="area.often"></i>
+                                </div>
+                            </div>
+                        </ion-item>
+                    </div>
+                </ion-list>
+                <ion-infinite-scroll on-infinite="appendAreaBike()" spinner="ios-small" distance="1%" immediate-check="false" ng-if="areaInfinitDown">
+                </ion-infinite-scroll>
+            </ion-scroll>
+            <!--所有站点-->
+            <ion-scroll ng-if="areaName=='所有站点'"  delegate-handle="allBike" has-bouncing="true" class="bikeScroll" style=" top: 154px;">
+                <!--下拉刷新-->
+                <ion-refresher pulling-text="正在刷新" on-refresh="doRefresh(2)" spinner="ios-small"></ion-refresher>
+
+                <ion-list hx-html-null="allStation" tip-go="<a class='sjgx'>无站点，请点我获取最新数据!</a>">
+                    <div ng-repeat="all in allStation track by $index" id="{{'all'+all.id}}">
+                        <ion-item class="item" >
+                            <div class="row">
+                                <div class="col stnWord" ng-click="toMap(all)">
+                                    <div class="row">
+                                        <div class="col stnName">
+                                            {{all.name}}
+                                            <ion-spinner icon="ios-small" class="stnFresh"></ion-spinner>
+                                        </div>
+                                        <div class="col bikeParking">
+                                            可借：<span>{{all.availBike}}</span>
+                                            可停：<span>{{all.capacity-all.availBike}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="row stnAdds">
+                                        <div class="col col-90 titleOver">
+                                            {{all.address}}
+                                        </div>
+                                        <div class="col col-10">
+                                            <span class="ion-ios-location ionCols"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-60px stnAdd" ng-click="tiggleOften(all.id,1,1);markNear(all.id)">
+                                    <i class="icon ion-ios-heart-outline" ng-if="!all.often"></i>
+                                    <i class="icon ion-ios-heart" ng-if="all.often"></i>
+                                </div>
+                            </div>
+                        </ion-item>
+                    </div>
+                </ion-list>
+                <ion-infinite-scroll  on-infinite="appendAllBike()" spinner="ios-small" distance="1%" immediate-check="false" ng-if="allInfinitDown">
+                </ion-infinite-scroll>
+            </ion-scroll>
+        </div>
+    </ion-content>
+
+</ion-view>

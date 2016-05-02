@@ -1,0 +1,443 @@
+
+.zxcFw .search {
+    margin-bottom: 0;
+    height: 60px;
+    padding: 6px;
+}
+.zxcFw .search .item {
+    border-bottom: none;
+}
+.zxcFw .search .searchBtn{
+    padding:0 15px ;
+
+}
+.zxcFw .bar .button.button-clear {
+    letter-spacing: 4px;
+    margin-left: -2px;
+    line-height: 29px;
+    top: -1px;
+    font-size: 15px;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.zxcFw .bordR5 {
+    border-radius: 5px
+}
+
+.zxcFw .bordR5 .item-divider:first-child {
+    border-radius: 5px 5px 0 0;
+}
+
+.zxcFw .bordR5 div:last-child .item:last-child {
+    border-radius: 0 0 5px 5px
+}
+
+.zxcFw .item-divider {
+    min-height: 45px;
+    padding-top: 12px;
+    background-color: #c6cbdd;
+    font-weight: bold;
+    border-top-color: #fff;
+    color: #000;
+}
+
+.zxcFw .item-divider.activated {
+    background-color: #989898
+}
+
+.zxcFw .item {
+    margin: 8px auto;
+    /*margin: 0 auto;*/
+    padding: 0;
+    font-size: 80%;
+    color: #939093;
+    font-weight: bold;
+    border: 1px solid #e7e7e7;
+    border-left: none;
+    border-right: none;
+    border-top: none
+}
+.zxcFw .stnWord.activated{
+    background-color: #D9D9D9;
+}
+
+.zxcFw a.item {
+    background-color: #fff;
+    -webkit-columns: auto 1
+}
+
+.zxcFw .item .row {
+
+    padding: 0;
+}
+
+.zxcFw .item .col {
+    margin: 0;
+    padding: 0;
+    text-indent: 10px;
+}
+
+.col-60px {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 60px;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 60px;
+    -ms-flex: 0 0 60px;
+    flex: 0 0 60px;
+    max-width: 60px;
+}
+
+.zxcFw .item .stnName {
+    padding: 5px;
+    letter-spacing: 4px;
+    font-size: 125%;
+    color: #080808;
+}
+
+
+.zxcFw .item .stnAddress.activated {
+    background-color: #d4d4da;
+    color: #0cc3f0;
+}
+
+.zxcFw .item .stnAddress .ion-ios-location {
+    font-size: 200%;
+    margin-left: 200%;
+}
+
+.zxcFw .item .bikePark {
+     margin-left: 200%;
+     line-height: 28px;
+ }
+
+.zxcFw .item .bikePark span {
+    color: #ff5400;
+    font-size: 120%;
+}
+.bikeParking {
+    margin-left: 200%;
+    line-height: 28px;
+}
+
+.bikeParking span {
+    color: #ff5400;
+    font-size: 120%;
+}
+.disTitle{
+    color: red;
+}
+.ionCols{
+    color: #0cc3f0;
+}
+.zxcFw .item .stnAddress .ion-ios-location:before {
+    color: #0cc3f0;
+}
+
+.zxcFw .item .stnAddress .locationFlag.ion-ios-location, .zxcFw .item .bikePark.bikeParkMove {
+    animation: locationFlagMove 1s forwards;
+    -webkit-animation: locationFlagMove 1s forwards;
+}
+
+@keyframes locationFlagMove {
+    0% {
+        margin-left: 200%;
+    }
+    50% {
+        margin-left: -5%;
+    }
+    67% {
+        margin-left: -5%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+@-webkit-keyframes locationFlagMove /* Safari and Chrome */
+{
+    0% {
+        margin-left: 200%;
+    }
+    50% {
+        margin-left: -5%;
+    }
+    67% {
+        margin-left: -5%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+.zxcFw .item .stnAdds .col{
+    padding: 3px;
+    font-weight: normal;
+}
+.zxcFw .item .titleOver {
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.zxcFw .item .stnBorrow {
+    font-size: 110%;
+    padding: 13px
+}
+
+.zxcFw .item .stnLine {
+    line-height: 45px;
+    font-size: 30px;
+    transform: rotate(7deg);
+    color: #e7e7e7;
+    -webkit-transform: scaleX(0.2); /* Safari 和 Chrome */
+}
+
+.zxcFw .item .stnStop {
+    font-size: 110%;
+    padding: 13px
+}
+
+.zxcFw .item .stnBorrow span, .zxcFw .item .stnStop span {
+    color: #ff5400;
+    font-size: 120%;
+}
+
+.zxcFw .item .stnAdd {
+}
+
+.zxcFw .item .stnAdd.activated i {
+    color: #676767;
+    font-size: 200%;
+}
+
+.zxcFw .item .stnFresh {
+    font-size: 150%;
+    font-weight: normal;
+    position: absolute;
+    right: 20%;
+    top: 3px;
+    color: #9c9a9c;
+    display: none;
+}
+
+.zxcFw .item .stnName.activated .stnFresh {
+    color: #ff5400;
+}
+
+.zxcFw .item .stnAdd i, .zxcFw .item .stnDel i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -17px;
+    font-size: 230%;
+    padding: 3px 5px;
+    color: #ff5400;
+    font-weight: normal;
+
+}
+
+.zxcFw .item .stnDel i {
+    color: #6b696b;
+    margin-left: 5px;
+}
+
+.zxcFw .item .stnDel.activated {
+    opacity: 0.5;
+}
+.sjgx.activated {
+    color: red;
+    font-size: 110%;
+}
+
+/*新的*/
+
+/*自行车服务-卡查询css*/
+.zxcFw #record .item {
+    padding: 12px 9px 5px 9px;
+}
+
+.zxcFw #record .rltive:nth-of-type(even) {
+    margin-bottom: 10px
+}
+
+.zxcFw #record ul {
+    position: absolute;
+    z-index: 10;
+    top: 3px;
+    right: 14px;
+    font-size: 12px
+}
+
+.zxcFw #record ul li:first-child {
+    color: #9e2825
+}
+
+.zxcFw #record ul li:last-child {
+    color: #2671f5
+}
+
+.zxcFw #record .item-divider.activated {
+    background-color: #dcdcdc
+}
+
+.zxcFw #record .rltive:nth-of-type(even) .typ {
+    padding-left: 30px;
+    color: green
+}
+
+.zxcFw #record .rltive:nth-of-type(odd) .typ {
+    padding-left: 30px;
+    color: red
+}
+
+.zxcFw #record .ion-ios-upload-outline:before {
+    font-size: 30px;
+    color: red;
+    position: absolute;
+    top: 5px;
+    font-weight: bold
+}
+
+.zxcFw #record .ion-ios-download-outline:before {
+    font-size: 30px;
+    color: green;
+    position: absolute;
+    top: 5px;
+    font-weight: bold
+}
+
+/*自行车服务-卡查询css*/
+.zxcFw #myList, .zxcFw #stationList {
+    position: relative;
+    top: 29px;
+    left: 36px;
+    background-color: #deebf3;
+    z-index: 9910;
+    height: 200px;
+    overflow: hidden;
+}
+
+.zxcFw #myList li, .zxcFw #stationList li {
+    height: 25px;
+    line-height: 25px;
+}
+
+/*自行车服务-服务指南css*/
+.zxcZn .item-text-wrap {
+    border-radius: 4px;
+    opacity: 0.8;
+    background: #dcdcdc;
+    color: #222
+}
+
+.zxcZn h4 {
+    width: 100%;
+    text-align: center
+}
+
+.zxcFw .bikeToggle {
+    overflow: hidden;
+    margin-top: -1px;
+    width: 100%;
+    height: 55px;
+    line-height: 30px;
+    background-color: #f1f1f1;
+
+}
+
+.zxcFw .bikeToggle li {
+    float: left;
+    margin-top: 12px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #FF7D00;
+    color: #FF7D00;
+    text-align: center;
+    width: 26%;
+}
+
+.zxcFw .bikeToggle li.activated {
+    opacity: 0.5;
+}
+
+.zxcFw .bikeToggle li:first-child {
+    margin-left: 11%;
+    border-radius: 5px 0 0 5px;
+    margin-right: -1px;
+}
+
+.zxcFw .bikeToggle li:last-child {
+    border-radius: 0 5px 5px 0;
+    margin-left: -1px;
+}
+
+.zxcFw .bikeToggle .active {
+    background-color: #FF7D00;
+    color: white;
+}
+
+/*------------------------------------------*/
+
+.inAppBrowserWrap {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: rgba(235, 235, 235, 1.0);
+}
+
+.inAppBrowserWrap menu {
+    overflow: auto;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.inAppBrowserWrap menu li {
+    font-size: 25px;
+    height: 25px;
+    float: left;
+    margin: 0 10px;
+    padding: 3px 10px;
+    text-decoration: none;
+    color: #ccc;
+    display: block;
+    background: rgba(30, 30, 30, 0.50);
+}
+
+.inAppBrowserWrap menu li.disabled {
+    color: #777;
+}
+
+.bikeBorrowDetail address {
+    margin-bottom: 0;
+}
+
+.bikeBorrowDetail .list .item {
+    margin-bottom: 15px;
+}
+
+.bikeBorrowDetail .borderBottom {
+    border-bottom: 1px dashed #B2B2B2;
+    margin-bottom: 5px;
+}
+
+.bikeBorrowDetail .item h2 {
+    border-left: 6px solid;
+    margin-bottom: 8px;
+    padding-left: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.bikeBorrowDetail .bikeBorrowDetailInfo {
+    line-height: 25px;
+    padding-left: 30px;
+    color: gray;
+    font-size: 14px;
+}
+
+.bikeBorrowDetail .bikeBorrowDetailInfo i {
+    margin-right: 5px;
+}
+.button.myactive{
+    background-color: #FF7D00;
+    border: 1px solid #FF7D00;
+}

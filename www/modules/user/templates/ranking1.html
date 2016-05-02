@@ -1,0 +1,26 @@
+<ion-view class="back-ground-view" view-title="排名信息" ng-init="threeMonthMap()">
+    <ion-content  has-bouncing="true">
+        <ion-refresher
+                pulling-text="刷新中..."
+                on-refresh="threeMonthMap()" spinner="ios-small">
+        </ion-refresher>
+        <p class="rankCount">我的排名</p>
+        <div class="list">
+            <div class="item item-avatar">
+                <img src="img/m2.jpg">
+                <h2 style="font-weight: 600">{{rankInfo.myNo.phone}}<span class="rankTitle">{{rankInfo.myNo.no}}名</span>
+                </h2>
+                <p>时间: {{rankInfo.myNo.time}} <span style="float: right" ng-class="rankInfo.myNo.score == '合格' ? 'positive' : 'assertive'"> {{rankInfo.myNo.score}}</span></p>
+            </div>
+        </div>
+        <p class="rankCount" style="margin-bottom: 3px">历史排名</p>
+        <div class="list">
+            <a class="item item-avatar margin-bottom-5" ng-repeat="item in rankInfo.top10" ng-class="rankInfo.myNo.no == $index+1 ? 'activated':''">
+                <img src="img/m2.jpg">
+                <h2 style="font-weight: 600">{{item.beginDate}}<span class="rankTitle" style="color: #FF8400">{{item.no}}名</span>
+                </h2>
+                <p>用时: {{item.time}} <span style="float: right" ng-class="rankInfo.myNo.score == '合格' ? 'positive' : 'assertive'"> {{item.score}}</span></p>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

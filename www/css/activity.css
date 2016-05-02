@@ -1,0 +1,198 @@
+.list_title{
+    padding: 10px 6px 11px 10px;font-size: 18px; font-weight: bold; background: url("../img/title_line.png") no-repeat;
+    background-position: bottom;
+    background-size: 100% 5px;
+    margin-bottom:8px;
+    
+}
+.listContent .item-thumbnail-left img{
+    background: url('../img/defaultImgBg.jpg'); background-size: 80px 80px; background-position: center 5px;
+}
+.listContent .item p{
+    white-space: pre-line;  height: 42px; overflow: hidden;color: #9B9B9B
+}
+
+.listContent .itemContent{
+    position: absolute; width: 120px;left: 10px;
+    padding: 0 5px 0 5px;background-color: #3a3a3a;opacity: 0.7;bottom: 8px;
+}
+
+
+.activityContent{
+    bottom: 48px;
+}
+
+.activityMap{
+    position: absolute; top: 5px; bottom: 0; left: 0;right: 0;
+}
+.activityMap .scroll-bar{
+    display: none;
+}
+.popoverList .item{
+    padding-top: 10px; padding-bottom: 10px;
+}
+.item-right{
+    font-size: 14px; height: 30px; line-height: 30px;
+}
+.item-right span{
+    border-radius: 5px;
+    height: 19px;
+    line-height: 19px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.item-right span:first-child{
+ width: 85px;font-weight: bold; color: #161616;
+}
+
+
+
+/* 计时器样式 */
+
+.clock {
+     position: relative; left: 50%; top: 60px; z-index: 2;
+    margin-left: -24px;
+}
+.clock p {
+    float: left;
+    background-color: rgba(255, 255, 255, 0.16);
+    text-align: center;
+    font-size: 14px;
+    color: #FFF;
+}
+
+ion-percent{
+    display: block;
+    width: auto;
+    height: auto;
+}
+/***/
+.pie {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    top: 0px;
+    left: 50%;
+    margin-left: -52px;
+    position: relative;
+}
+
+.pie:after {
+    content: attr(data-percentage) '%';
+    width: 93px;
+    height: 93px;
+    border-radius: 50%;
+    background: #ecf0f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -o-transform:rotate(7deg);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 20px;
+    text-align: center;
+    text-indent: 0;
+    line-height: 93px;
+}
+
+/* Form Progress */
+
+
+
+.detailContent p{
+  font-size: 14px; color: #33260d;
+}
+.detailContent p span {
+    font-size: 16px;
+    color: #6D6D6D;
+    text-shadow: 1px 0px 0px #5d72ad; margin-right: 8px;
+}
+.detailContent .item-body .full-image{
+    background: url('../img/defaultImgBg.jpg') no-repeat;  background-position: center center; background-size: 130px 130px;
+    border-radius: 3px; max-height: 280px; min-height: 200px; border: 1px solid #c9c9c9;
+}
+.startMeList .item-icon-left .icon{
+    color: #9b9b9b;
+    font-weight: 100;
+    font-size: 24px;
+}
+
+
+
+.startMeList{
+    -webkit-animation: zoomIn 100ms;
+    animation: zoomIn 100ms;
+}
+
+.staCont{
+    margin-top: 10px;
+}
+
+
+.scanner-btn.button.icon-left:before{
+    font-size: 90px; padding-right: 0;
+    border: none;
+}
+.scanner-btn.button.activated:active{
+    opacity: 0.5;
+ }
+#character-slider ul li p{
+    color: #FFF;
+    font-size: 22px;
+    text-align: center;
+}
+.staCont .station{
+    margin: 0 auto;
+    font-size: 14px; border: 6px solid #D4D4D4; width: 60px; height: 60px; border-radius: 50%; text-align: center
+}
+
+/* 已扫描的站点*/
+.staFinish{
+    background-color: rgba(0, 255, 14, 0.32);
+}
+
+.noResult{
+    text-align: center;margin: 50px auto 0 auto;
+}
+
+.noResult i{
+    font-size: 20px; line-height: 50px;
+
+}
+
+.noResult span{
+  font-size: 20px; line-height: 50px; color: gray;
+}
+
+.start-headBg{
+    width: 100%; height: 130px;
+}
+
+.contentBar{
+    border-bottom: 1px solid #B2B2B2;
+    text-align: center;
+    background-color: #FFF;
+    width: 100%;
+    padding-top:5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    color: #000;
+}
+.contentBar ~ion-content{
+    top: 32px;
+}
+
+
+.scannerTip{
+    color: rgb(194, 76, 76);
+    font-size: 16px;
+    padding: 4px 10px;
+    background-color: #141517;
+}
+.progress { padding: 4px; background: rgba(0, 0, 0, 0.25); border-radius: 6px; -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08); }
+.progress-bar { position: relative; height: 16px; border-radius: 4px; -webkit-transition: 0.4s linear; -moz-transition: 0.4s linear; -o-transition: 0.4s linear; transition: 0.4s linear; -webkit-transition-property: width, background-color; -moz-transition-property: width, background-color; -o-transition-property: width, background-color; transition-property: width, background-color; -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1); box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1); }
+.progress-bar:before, .progress-bar:after { content: ''; position: absolute; top: 0; left: 0; right: 0; }
+.progress-bar:before { bottom: 0; border-radius: 4px 4px 0 0; }
+.progress-bar:after { z-index: 2; bottom: 45%; border-radius: 4px; background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05)); background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05)); background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05)); background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05)); }
+.progress-bar { width: 5%; background-color: #f63a0f; }

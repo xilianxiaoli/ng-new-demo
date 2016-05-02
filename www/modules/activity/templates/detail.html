@@ -1,0 +1,77 @@
+<ion-view view-title="活动详情" ng-init="getMapDetailInfo()" class="activity-details back-ground-view">
+    <ion-content class="padding-top" style="bottom: 49px;" has-bouncing="true">
+        <ion-refresher
+                pulling-text="刷新中..."
+                on-refresh="getMapDetailInfo()" spinner="ios-small">
+        </ion-refresher>
+        <div class="list card detailContent" style="margin-top: 10px">
+            <div class="item item-body" style="border: none;">
+                <div>
+                    <img class="full-image" src="{{mapDetailInfo.mapUrl}}">
+                </div>
+                <p><span>活动地点</span>:{{mapDetailInfo.addr}}</p>
+                <p><span>活动口号</span>:{{mapDetailInfo.mapLearning}}</p>
+                <p><span>地图描述</span>:{{mapDetailInfo.mapIntroduction}}</p>
+            </div>
+        </div>
+
+    </ion-content>
+    <div class="tabs tabs-stable tabs-icon-left" style=" position: absolute; height: 49px; bottom: 0; left: 0; right: 0">
+        <a class="tab-item" href="#/home/activityMap">
+            <i class="icon ion-android-map"></i>
+            查看地图
+        </a>
+        <a class="tab-item" ng-click="showStation($event)">
+            <i class="icon ion-android-pin"></i>
+            线路站点
+        </a>
+        <a class="tab-item" ng-click="chooseTypeModal()">
+            <i class="icon ion-android-send"></i>
+            开始
+        </a>
+    </div>
+</ion-view>
+
+<script type="text/ng-template" id="popover.html">
+    <ion-popover-view style="width: 150px; height: 170px; border-radius: 0">
+        <p class="contentBar">站点列表</p>
+        <ion-content class="popoverList" has-bouncing="true"  style="bottom: 10px;">
+            <div class="list">
+                <a class="item" href="#" ng-repeat="lineItem in mapDetailInfo.lineNoList">
+                    站点{{lineItem.lineNo}}
+                </a>
+            </div>
+        </ion-content>
+    </ion-popover-view>
+</script>
+
+<script id="templates/chooseType.html" type="text/ng-template">
+    <ion-modal-view class="chooseType back-ground-view">
+        <ion-content class="padding" has-bouncing="true" style="bottom: 60px; top: 10px;">
+            <p class="padding-horizontal" style="font-size: 18px;font-weight: bold;"><span class="mark">*</span>活动模式</p>
+            <div class="list">
+                <label class="item item-radio">
+                    <input type="radio" name="activityType" ng-model="activityType.value" ng-value="1">
+                    <div class="item-content" style="color: #095479">
+                        <i class="radio-icon ion-flag" style="color: rgb(255, 77, 0)"></i>传统模式
+                    </div>
+                    <i class="radio-icon ion-flag" style="color: rgb(255, 77, 0)"></i>
+                </label>
+                <label class="item item-radio">
+                    <input type="radio" name="activityType" ng-model="activityType.value" ng-value="2">
+                    <div class="item-content" style="color: #095479">
+                        <i class="radio-icon ion-checkmark-round" style="color: rgb(255, 77, 0)"></i>积分模式
+                    </div>
+                    <i class="radio-icon ion-flag" style="color: rgb(255, 77, 0)"></i>
+                </label>
+            </div>
+            <p ng-if="activityType.value == 1" style="text-indent: 20px; color: rgba(94, 94, 94, 1)">【传统模式】要求定向越野人员按照路线顺序行进。若中间某个点的顺序与路线不相同，需要从该点开始，按剩余的路线顺序重新进行移动，否则成绩为不及格。
+                若按照路线顺序完成比赛，则成绩为及格，且完成时间越短，成绩越高。</p>
+            <p ng-if="activityType.value == 2" style="text-indent: 20px; color: rgba(94, 94, 94, 1)">【积分模式】积分模式下，每个布点都有一个对应的积分。定向越野人员在规定时间内，不需要按照路线顺序，可以随意到达不同的布点获取积分
+                （一个布点的积分只有一次生效，重复不算在内），最后获取的积分则为定向越野人员的成绩。</p>
+        </ion-content>
+        <div class="bar bar-footer" style="height: 60px;padding: 0 5px">
+            <button class="button button-full button-app" ng-click="starActivity()">进 入 活 动</button>
+        </div>
+    </ion-modal-view>
+</script>

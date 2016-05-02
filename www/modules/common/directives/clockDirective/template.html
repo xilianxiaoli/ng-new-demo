@@ -1,0 +1,25 @@
+<svg>
+    <filter class="innerShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+        <feOffset in="blur" dx="0" dy="1"/>
+    </filter>
+    <!-- Background and Shadow -->
+    <g>
+        <circle class="shadow" style="fill:rgba(0,0,0,0.2)" filter="url(.innerShadow)"></circle>
+        <circle style="fill: #000" class="dial"></circle>
+    </g>
+    <!-- Microlines -->
+    <g class="microlines"></g>
+    <!-- Minilines -->
+    <g class="minilines"></g>
+
+    <!-- Handles -->
+    <line class="hour"></line>
+    <line class="minute"></line>
+    <line class="second"></line>
+
+    <!-- Micro circle -->
+    <circle style="fill: #F00" class="center1"></circle>
+    <circle style="fill: #000" class="center2"></circle>
+</svg>
+

@@ -1,0 +1,48 @@
+<ion-view view-title="详情" class="back-ground-view" ng-init="getOneRecord()">
+    <ion-content class="padding padding" has-bouncing="true">
+        <div class="list queryContent">
+            <label class="item item-input borderRaUp">
+                <span class="input-label">参赛地点：</span>
+                <span class="input-result">{{oneRecord.mapLocation}}</span>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">参赛时间：</span>
+                <span class="input-result">{{oneRecord.record[0].date}}</span>
+            </label>
+            <label class="item item-input ">
+                <span class="input-label">所用时间:</span>
+                <span class="input-result">{{oneRecord.time}}</span>
+            </label>
+            <label class="item item-input ">
+                <span class="input-label">活动模式:</span>
+                <span class="input-result">{{oneRecord.competype | numFilter}}</span>
+            </label>
+            <label class="item item-input borderRaDown margin-bottom-15">
+                <span class="input-label">成绩</span>
+                <span class="input-result" ng-style="oneRecord.score == '合格' ? {color:'green'}:{color:'red'}">{{oneRecord.score}}</span>
+            </label>
+            <article style="background-color: #FFF; border: 1px solid #ddd; padding-left: 16px; padding-right: 10px;margin-bottom: 15px;">
+                <div>
+                    <h4 class="itemTitle">地图线路:</h4>
+                    <span class="input-result">{{oneRecord.mapIds}}</span>
+                </div>
+                <div style="border-top:1px solid #ddd">
+                    <h4 class="itemTitle">用户线路:</h4>
+                    <span class="input-result">{{oneRecord.userLine}}</span>
+                </div>
+            </article>
+            <a class="item item-icon-right" href="#home/ranking/{{oneRecord.Id}}/{{oneRecord.competype}}">
+                <i class="icon "></i>
+                <span class="input-label assertive">查询当天同一地图参数人数排名信息</span>
+
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+            <a class="item item-icon-right" href="#home/ranking1/{{oneRecord.Id}}/{{oneRecord.competype}}">
+                <i class="icon "></i>
+                <span class="input-label assertive">查询近3个月同一地图活动的排名信息</span>
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </div>
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,35 @@
+<ion-view view-title="" ng-init="showLine()">
+    <ion-content scroll="false">
+        <ul class="list" style="margin-bottom: 4px">
+            <li class="item"><strong>候车站点</strong>: <strong style="color: red">车公庙</strong></li>
+        </ul>
+        <div class="button-bar padding-left padding-right" style="width: 80%; margin-left: 10%" ng-init="t=1">
+            <a class="button button-outline button-small button-positive btnTransition" ng-click="t=1"
+               ng-class="{'active' : t}">开往 {{busLineInfo[busLineInfo.length-1]}}</a>
+            <a class="button button-outline button-small button-positive btnTransition" ng-click="t = !t"
+               ng-class="{'active' : !t}">开往 {{busLineInfo[busLineInfo.length-1]}}</a>
+        </div>
+        <ion-content class="scrollPosition" direction="x" has-bouncing="true">
+            <div class="stationContent" ng-if="t==1">
+                <div class="stationBar" ng-repeat="item in busLineInfo">
+                    <div class="stationCircle"></div>
+                    <div class="stationTitle">
+                        {{$index+1}}{{item}}
+                    </div>
+                </div>
+            </div>
+            <div class="stationContent" ng-if="t == 0">
+                <div class="stationBar" ng-repeat="item in busLineInfo">
+                    <div class="stationCircle"></div>
+                    <div class="stationTitle">
+                        {{$index+1}}{{item}}
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+        <div class="footerBtn">
+            <a class="button-positive button-block busInfo">
+                首末班服务时间: {{busLineInfo[0].startTime}} - {{busLineInfo[0].endTime}}</a>
+        </div>
+    </ion-content>
+</ion-view>

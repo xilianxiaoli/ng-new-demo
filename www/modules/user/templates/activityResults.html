@@ -1,0 +1,43 @@
+<ion-view view-title="成绩查询" class="back-ground-view">
+    <ion-content class="score" scroll="false">
+        <div class="list list-inset query">
+            <label class="item item-input">
+                <i class="icon ion-calendar startCalendar"></i>
+                <span class="input-label">开始时间:</span>
+                <input type="text" ng-model="queryCondition.sTime" ng-click="datePickerShow('st')" readonly="readonly">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-calendar endCalendar"></i>
+                <span class="input-label">结束时间:</span>
+                <input type="text" ng-model="queryCondition.eTime" ng-click="datePickerShow('et')" readonly="readonly">
+            </label>
+            <label class="item item-input item-select">
+                <i class="icon ion-ios-keypad modeType"></i>
+                <span class="input-label">模式:</span>
+                <select ng-model="queryCondition.competype">
+                    <option value="0">全部模式</option>
+                    <option value="1">传统模式</option>
+                    <option  value="2">积分模式</option>
+                </select>
+            </label>
+        </div>
+        <div class="padding-horizontal">
+            <button class="button button-block button-app" ng-click="queryScore();resultShow = 1">
+                查 询
+            </button>
+        </div>
+        <ion-scroll class="list aclist" style="" has-bouncing="true">
+            <a ng-if="resultShow" class="item item-avatar item-icon-right" href="#/home/scoreDetail/{{item.beginDate}}/{{item.endDate}}" ng-repeat="item in scoreList">
+                <img src="img/m2.jpg">
+                <h2>{{item.mapLocation}}</h2>
+                <p>{{item.beginDate}} <span ng-class="item.score == '合格' ? 'positive' : 'assertive'"> {{item.score}}</span></p>
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+            <p class="noResult" ng-if="noResult">
+                    <i class="icon ion-android-sad"></i>
+                    <span>暂无越野信息</span>
+            </p>
+
+        </ion-scroll>
+    </ion-content>
+</ion-view>

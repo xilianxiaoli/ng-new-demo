@@ -1,0 +1,55 @@
+<ion-view class="back-ground-view" view-title="卡查询">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-reply backBtn" ng-click="goBackView()"></button>
+    </ion-nav-buttons>
+    <ion-content padding="true" scroll="false">
+        <div class="button-bar padding" ng-init="t=1">
+            <a class="button button-small" ng-class="t?'myactive':''" ng-click="t=1">借车记录查询</a>
+            <a class="button button-small" ng-class="!t?'myactive':''" ng-click="t=!t">余额查询</a>
+        </div>
+        <form name="queryCard" role="form" ng-if="t">
+            <div class="list">
+                <label class="item item-input">
+                    <i class="icon ion-iphone phoneIcon" style="font-size: 24px"></i>
+                    <span class="input-label">联系电话: </span>
+                    <input type="text" placeholder="手机号码或者固定电话" ng-model="queryObj.TBVipNo" required/>
+                </label>
+                <label class="item item-input margin-bottom-15">
+                    <i class="icon ion-card cardIcon"></i>
+                    <span class="input-label">身份证号:</span>
+                    <input type="text" placeholder="18位身份证件号"  ng-model="queryObj.TBCertNo" required maxlength="18" minlength="18"/>
+                </label>
+                <label class="item item-input">
+                    <i class="icon ion-calendar startCalendar"></i>
+                    <span class="input-label">起始时间:</span>
+                    <input type="text" ng-model="queryObj.tb_startTime" placeholder="起始时间" ng-click="datePickerShow('st')" readonly="readonly" required>
+                </label>
+                <label class="item item-input">
+                    <i class="icon ion-calendar endCalendar"></i>
+                    <span class="input-label">结束时间:</span>
+                    <input type="text" ng-model="queryObj.tb_endTime"  placeholder="结束时间"  ng-click="datePickerShow('et')" readonly="readonly" required>
+                </label>
+            </div>
+            <a class="button button-app button-block" ng-click="queryBikeCard()" ng-disabled="queryCard.$invalid">
+                查询借车记录
+            </a>
+        </form>
+        <form name="queryBalance" role="form" ng-if="!t">
+            <div class="list">
+                <label class="item item-input">
+                    <i class="icon ion-iphone phoneIcon" style="font-size: 24px"></i>
+                    <span class="input-label">联系电话: </span>
+                    <input type="text" placeholder="手机号码或者固定电话" ng-model="queryBalanceParam.TBVipNo" required/>
+                </label>
+                <label class="item item-input margin-bottom-15">
+                    <i class="icon ion-card cardIcon"></i>
+                    <span class="input-label">身份证号:</span>
+                    <input type="text" placeholder="18位身份证件号"  ng-model="queryBalanceParam.TBCertNo"  required maxlength="18" minlength="18"/>
+                </label>
+            </div>
+            <a class="button button-app button-block" ng-click="queryBalanceInfo()" ng-disabled="queryBalance.$invalid">
+                查询余额
+            </a>
+        </form>
+    </ion-content>
+</ion-view>

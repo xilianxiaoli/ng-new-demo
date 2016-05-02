@@ -1,0 +1,81 @@
+<ion-view view-title="定向越野" ng-init="getMapListInfo()" class="activity-home back-ground-view ">
+    <!--信息图标-->
+    <ion-nav-buttons side="right">
+        <a class="button  button-outline button-white" ng-click="goUserInfo()">查看成绩</a>
+       <!-- <button class="button button-icon button-clear ion-email" style="color: #FFF">
+        </button>-->
+    </ion-nav-buttons>
+    <ion-content class="activityContent" has-bouncing="true">
+        <ion-refresher
+                pulling-text="刷新中..."
+                on-refresh="getMapListInfo()" spinner="ios-small">
+        </ion-refresher>
+        <div class="list listContent">
+            <div class="list_title">精彩推荐</div>
+            <a class="item item-thumbnail-left" href="#/home/activityDetail/{{itmeMap.mapId}}"
+               ng-repeat="itmeMap in activityList.mapListInfo">
+                <img ng-src="{{itmeMap.mapSmallUrl}}">
+                <div class="item-right">
+                    <span>{{itmeMap.mapLocation}}</span>
+                </div>
+                <p>{{itmeMap.mapIntroduction}}</p>
+            </a>
+        </div>
+    </ion-content>
+    <div class="tabs tabs-secondary tabs-icon-left"
+         style="position: absolute; height: 49px; bottom: 0; left: 0; right: 0">
+        <a class="tab-item" ng-click="showInstroduce()">
+            <i class="icon ion-ios-book"></i>
+            介绍
+        </a>
+        <a class="tab-item" ng-click="getYueY($event)">
+            <i class="icon ion-android-pin"></i>
+            越野点
+        </a>
+        <a class="tab-item" ng-click="showRule()">
+            <i class="icon ion-ios-game-controller-b"></i>
+            玩法
+        </a>
+    </div>
+</ion-view>
+
+
+<script id="templates/rule.html" type="text/ng-template">
+    <ion-modal-view class="activity">
+        <p class="contentBar">活动说明</p>
+        <ion-content class="padding has-header" has-bouncing="true" style="bottom: 10px">
+            <div style="text-indent: 30px;  overflow: hidden" class="dark" ng-bind-html="activityList.rule">
+            </div>
+        </ion-content>
+    </ion-modal-view>
+</script>
+
+<script type="text/ng-template" id="s-popover.html">
+    <ion-popover-view style="width: 150px; height: 170px; border-radius: 0">
+        <p class="contentBar">越野点</p>
+        <ion-content class="popoverList padding-horizontal" has-bouncing="true">
+            <div ng-bind-html="activityList.location"></div>
+        </ion-content>
+    </ion-popover-view>
+</script>
+
+
+<script type="text/ng-template" id="introduce.html">
+    <ion-modal-view class="activity back-ground-view">
+        <p class="contentBar">定向越野说明</p>
+        <ion-content class="has-header padding" has-bouncing="true"  style="bottom: 10px">
+            <div style="text-indent: 30px" class="dark">
+                <p>1: 定向越野爱好者利用中山通APP和布点上的二维码共同完成定向越野运动。</p>
+                <p>2: 越野爱好者需要通过手机上的中山通应用填写基本信息并注册成为中山通用户。</p>
+                <p>3: 越野爱好者需要进行定向越野运动，应先从手机上的中山通应用选择需要的路线地图并按开始按钮</p>
+                <p>4:【传统模式】要求定向越野人员按照路线顺序行进。若中间某个点的顺序与路线不相同，需要从该点开始，按剩余的路线顺序重新进行移动，否则成绩为不及格。
+                    若按照路线顺序完成比赛，则成绩为及格，且完成时间越短，成绩越高。</p>
+                <p>5:【积分模式】积分模式下，每个布点都有一个对应的积分。定向越野人员在规定时间内，不需要按照路线顺序，可以随意到达不同的布点获取积分
+                    （一个布点的积分只有一次生效，重复不算在内），最后获取的积分则为定向越野人员的成绩。</p>
+                <p>6: 之后在越野运动过程中，爱好者需要用手机扫描指定地点的二维码；</p>
+                <p>7: 越野完成后，爱好者应在手机中山通应用上选择结束按钮。</p>
+                <p>8: 越野结束后，用户可以即时在个人中心查询相对应的路线和成绩</p>
+            </div>
+        </ion-content>
+    </ion-modal-view>
+</script>

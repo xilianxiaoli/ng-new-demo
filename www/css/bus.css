@@ -1,0 +1,327 @@
+.list .item.item-accordion {
+    line-height: 32px;
+    padding-top: 0;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 0;
+    transition: 0.09s all linear;
+    border: none;
+}
+
+.list .item.item-accordion.ng-hide {
+    line-height: 0px;
+}
+
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+    display: block !important;
+}
+
+.chooseLocation {
+    position: absolute;
+    font-size: 30px;
+    color: #387EF5;
+    line-height: 35px;
+    left: 100%;
+    margin-left: -35px;
+    border: none;
+    background-color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.chooseLocation:active, .lineSearchBtn:active{
+    border-radius: 2px;
+    background-image: -moz-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: -webkit-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: -o-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: -ms-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+}
+
+.locationExchangeBtn:active {
+    opacity: 0.5;
+}
+
+.locationExchangeBtn {
+    margin-top: 5px;
+    border: none;
+    width: 40px; height: 80px;
+    /*background: url("../img/change.png");*/
+    background-repeat: no-repeat;
+}
+
+.inputBorder {
+    border-radius: 1px;
+    border: solid 1px #758896;
+    padding: 0px 5px 1px 8px;
+}
+
+
+
+.inputWarming{
+    border-color: red;
+}
+.tangram-suggestion{
+    margin-left: -1px;
+    margin-right: -1px;
+    padding-left: 5px;
+}
+
+.footerBtn {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+}
+
+.schemeContent {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 12px;
+    top: 150px;
+
+}
+
+.schemeContent .item.item-stable {
+    background-color: inherit;
+    border-style: dashed;
+    border-color: #008000;
+    border-left: none;
+    border-right: 10px;
+}
+.schemeContent .item.active.item-stable{
+    background-color: #e5e5e5;
+}
+.lineSearchBtn {
+    border: none;
+    color: #FFF;
+    background-color: #6e9c2d;
+    border-radius: 0;
+    height: 36px;
+    font-weight: bold;
+    line-height: 36px;
+    position: absolute;
+    left: 100%;
+    width: 70px;
+    text-align: center;
+    margin-left: -70px;
+}
+
+.lineSearchBtn:active{
+    border-radius: 0;
+    background-image: -moz-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: -webkit-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: -o-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: -ms-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+}
+
+.btnTransition {
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.stationList {
+    position: absolute;
+    top: 110px;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+}
+
+.stationList .list,.lineList .list{
+    margin-bottom: 0px;
+}
+
+.lineList {
+    position: absolute;
+    top: 110px;
+    bottom: 35px;
+    left: 10px;
+    right: 10px;
+}
+
+
+
+.lineList .lineItem:active{
+    background-color: #467e88; opacity: 0.8;
+    color: #2f2f2f;
+    border-radius: 2px;
+}
+
+.lineList .lineItem{
+    padding: 10px 8px;
+    text-decoration: none;
+    color: #000;
+}
+
+.stationList .item, .lineList .item,.allLineList .item {
+    border-left: none;
+}
+
+.stationList .item:first-child, .lineList .item:first-child,.allLineList .item:first-child,.schemeContent .item.item-stable:first-child{
+    border-top: none;
+}
+
+.itemRightBtn {
+    background-color: transparent;
+    border: none;
+    position: absolute; left: 100%; margin-left: -57px;margin-top: -50px; z-index: 2;
+
+}
+
+/*.itemRightBtn:active{
+    border-radius: 2px;
+    color: #FFF;
+    background-image: -moz-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: -webkit-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: -o-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: -ms-linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+    background-image: linear-gradient(bottom, rgba(4, 54, 42, 0.78), rgba(4, 54, 42, 0.78));
+}*/
+
+.lineNo {
+    width: 50px;
+    display: block;
+    float: left;
+}
+
+.queryAllBus{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    background-color: inherit;
+    border: none;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: #444444;
+    padding: 2px 0 2px 0;
+}
+
+.queryAllBus:active{
+    opacity: 0.5;
+}
+
+.busInfo{
+    width: 100%;
+    text-align: center;
+    background-color: inherit;
+    border: none;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: #20441a;
+    padding: 2px 0 2px 0;
+}
+.badges {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    margin-top: -5px;
+}
+
+.allLineList{
+    position: absolute;
+    top: 60px;
+    bottom: 5px;
+    left: 10px;
+    right: 10px;
+}
+.allLineList .list{ margin-bottom: 0px}
+
+.stationContent{
+    margin-top: 20px;
+    /*border: 1px solid red;*/
+    display:-webkit-box;
+    -webkit-box-orient: horizontal;
+    width: 100px;
+}
+
+/** 站点信息样式 **/
+.stationBar{
+    width: 56px; height: 8px; box-shadow: 1px 1px 1px 0px rgba(4, 153, 134, 0.70);
+    letter-spacing: 2px;
+    border-color: #04A38F;
+    background-image: -moz-linear-gradient(bottom,#049986,#04A38F,#04AC98,#04B5A1);
+    background-image: -webkit-linear-gradient(bottom,#049986,#04A38F,#04AC98,#04B5A1);
+    background-image: -o-linear-gradient(bottom,#049986,#04A38F,#04AC98,#04B5A1);
+    background-image: -ms-linear-gradient(bottom,#049986,#04A38F,#04AC98,#04B5A1);
+    background-image: linear-gradient(bottom,#049986,#04A38F,#04AC98,#04B5A1); position: relative; margin: 10px 0;
+}
+.stationBar:first-child{
+    border-radius: 3px 0 0 3px;
+}
+.stationBar:last-child{
+    border-radius: 0 3px 3px 0;
+}
+
+
+.stationCircle{
+    position: relative; width: 16px; height: 16px; border-radius: 50%; background-color: #FFF; left: 50%; margin-left: -8px; top: -50%; margin-top: 0px;
+    border: 3px solid #04A38F;
+}
+
+.stationTitle{
+    position: relative; width: 20px; left: 50%; margin-left: -10px; top: -50%; margin-top: 0px; font-size: 14px; text-align: center;
+}
+
+.scrollPosition{
+    top: 120px;bottom: 38px;left: 10px;right: 10px;
+}
+
+.scrollPosition .scroll-bar{
+    display: none;
+}
+
+.borderBottom{
+    border-bottom: 1px solid #969696
+}
+
+.schemeContent .item{
+    padding:5px 0px 3px 15px;
+    border-left: none;
+}
+
+.item_toolFont{
+    color: #008000;
+}
+.item-title{
+    line-height: 30px;
+    font-size: 18px;
+    color: #220c04;
+}
+
+.schemeContent .item .badge{
+    right: 100%;
+    margin-right: -80px;
+    top: 10px;
+}
+
+
+.item-accordion b{
+    color: darkgreen;
+}
+.thisStation{
+    color: red;
+}
+
+.thisCircle{
+    border-color: red;
+    background-color: red;
+}
+
+.tangram-suggestion-main {
+    z-index: 999;
+}
+
+.bargraph{
+    width: 4px; height: 12px; background-color: #c0c0c0; border-radius: 5px; margin-left: 3px;
+}
+.searchResultPanel{
+    border:1px solid #C0C0C0;height:auto; display:none; width: 100%
+}

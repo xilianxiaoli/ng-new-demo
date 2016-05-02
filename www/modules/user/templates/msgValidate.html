@@ -1,0 +1,24 @@
+<ion-view class="back-ground-view" view-title="填写验证码" cache-view="false">
+    <ion-content has-bouncing="true" scroll="false">
+        <p class="postMsgTitle">我们已经给您的<span>{{phone}}</span>号码发送了一条验证短信</p>
+        <form role="form" name="form1">
+            <div class="list">
+                <div class="item item-input">
+                    <span class="input-label"><span class="mark">*</span>短信验证码</span>
+                    <input type="number" placeholder="请输入短信验证码" ng-model="msgValidate.msgCode" name="msgCode"
+                           minlength="6" maxlength="6" required>
+                    <button class="button button-small button-positive button-outline"
+                            style="right:2px; position:absolute;" ng-disabled="reSend" ng-init="clock();"
+                            ng-click="reSendMsgCode()">重新发送{{timeStr}}
+                    </button>
+                </div>
+            </div>
+            <div class="padding-horizontal">
+                <button ng-disabled="form1.msgCode.$invalid" class="button button-balanced button-full loginBtn"
+                        ng-click="valiMsgCode()">
+                    下 一 步
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

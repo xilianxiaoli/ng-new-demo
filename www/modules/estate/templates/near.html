@@ -1,0 +1,88 @@
+<ion-view view-title=" "  class="whole animated slideInRight back-ground-view">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-reply backBtn" ng-click="goBackView()"></button>
+        <div class="whole_headCenter">
+            <hx-toggle ng-model="listType.val"></hx-toggle>
+        </div>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <!--<button class="button button-icon button-clear ion-ios-search"></button>-->
+    </ion-nav-buttons>
+    <!--出租-->
+    <ion-content class="has-header" ng-show="listType.val==0" scroll="false">
+        <h-menu ng-model="estateMenuData" ng-init="hireCondition" btn-order="[2,3,1,0,5]" btn-num="4"></h-menu>
+        <div class="cdtion">
+            <span class="ion-funnel"></span>
+            <span ng-repeat="hc in hireCondition" ng-if="hc.range!=1" class="conditionRemove" ng-click="removeCondition(hc.englishName)">
+                {{hc.range+hc.suffix}}
+                 <span class="ion-ios-close-empty"> </span>
+            </span>
+        </div>
+        <ion-content class="ihas-header" delegate-handle="estateHireContent">
+
+            <ion-refresher spinner="ios-small"  pulling-text="正在刷新" on-refresh="_xialaRefresh()"></ion-refresher>
+
+            <a class="row oItem" ng-repeat="house in hire||estateHire" href="#/estate/detail/{{house.id}}/1">
+                <div class="col imgWrap">
+                    <img ng-src="{{'http://218.204.174.24:8052/ZST/images/house/small/'+house.smallPictureUrl}}">
+                </div>
+                <div class="col oItemCon" >
+                    <div class="row ">
+                        <div class="col">{{house.description.slice(0,14)}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">{{house.location.slice(0,36)}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">{{house.monthPay}}元/月</div>
+                    </div>
+                </div>
+            </a>
+            <p class="noResult" ng-if="estateHire.length == 0">
+                <i class="icon ion-android-sad"></i>
+                <span>暂时没有您要的出租信息</span>
+            </p>
+
+            <ion-infinite-scroll  ion-infinite-scroll-text="数据加载中..."  spinner="ios-small"
+                                  on-infinite="appendEstate()" distance="1%" immediate-check="false" ng-if="nextPageEstateChuzu">
+            </ion-infinite-scroll>
+        </ion-content>
+    </ion-content>
+    <!--出售-->
+    <ion-content class="has-header" ng-show="listType.val==1"  scroll="false">
+        <h-menu ng-model="estateMenuData" ng-init="sellCondition"   btn-order="[0,1,4,5,6]" btn-num="3"></h-menu>
+        <div class="cdtion">
+            <span class="ion-funnel"></span>
+            <span ng-repeat="sc in sellCondition"  ng-if="sc.range!=2" class="conditionRemove" ng-click="removeCondition(sc.englishName)">
+                {{sc.range+sc.suffix}}
+                  <span class="ion-ios-close-empty"> </span>
+            </span>
+        </div>
+        <ion-content class="ihas-header">
+            <ion-refresher spinner="ios-small"  pulling-text="正在刷新" on-refresh="_xialaRefresh()"></ion-refresher>
+            <a class="row oItem" ng-repeat="house in sell||estateSell" href="#/estate/detail/{{house.id}}/2">
+                <div class="col imgWrap">
+                    <img ng-src="{{'http://218.204.174.24:8052/ZST/images/house/small/'+house.smallPictureUrl}}">
+                </div>
+                <div class="col oItemCon" >
+                    <div class="row ">
+                        <div class="col">{{house.description.slice(0,14)}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">{{house.location.slice(0,36)}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">{{house.totalPrice}}万元</div>
+                    </div>
+                </div>
+            </a>
+            <p class="noResult" ng-if="estateSell.length == 0">
+                <i class="icon ion-android-sad"></i>
+                <span>暂时没有您要的出售信息</span>
+            </p>
+            <ion-infinite-scroll  ion-infinite-scroll-text="数据加载中..."  spinner="ios-small"
+                                  on-infinite="appendEstate()" distance="1%" immediate-check="false" ng-if="nextPageEstateChuShou">
+            </ion-infinite-scroll>
+        </ion-content>
+    </ion-content>
+</ion-view>

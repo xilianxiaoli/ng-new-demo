@@ -1,0 +1,60 @@
+<ion-view>
+    <ion-side-menus>
+        <ion-side-menu-content edge-drag-threshold="false" drag-content="false">
+            <ion-nav-bar class="bar app-bar">
+                <ion-nav-back-button></ion-nav-back-button>
+                <ion-nav-buttons side="left" class="hide"></ion-nav-buttons>
+            </ion-nav-bar>
+            <ion-nav-view name="menuContent">
+            </ion-nav-view>
+        </ion-side-menu-content>
+        <ion-side-menu side="left">
+            <ion-content class="sideMenuBg" scroll="false" style="top: 0">
+                <div class="margin-top-20">
+                    <!-- 未登录 -->
+                    <a class="noLogin" ng-if="!userIsOnline" ng-click="sideGoLogin()" menu-close>
+                        <div class="item item-avatar">
+                            <img src="img/yb.png">
+                            <h2>点击登陆</h2>
+                            <p>登陆后获取更多权限</p>
+                        </div>
+                    </a>
+                    <!-- 已登录 -->
+                    <a class="item item-avatar item-icon-right loginState" href="#/home/userInfo" menu-close ng-if="userIsOnline" style="min-height: 100px">
+                        <img src="img/icon.png">
+                        <p style="color: #FFF; font-size: 18px; padding-left: 22px; padding-top: 22px">{{currentUser.phone}}</p>
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </a>
+                </div>
+                <ion-scroll has-bouncing="true" style="bottom: 0;top: 130px; left: 0; right: 0; position: absolute">
+                    <div class="list">
+                        <a class="item item-icon-left item-icon-right"  menu-close ng-click="refreshData()">
+                            <i class="icon ion-android-refresh color1"></i>数据更新
+                            <span class="badge badge-assertive" style="right: 50px" ng-if="dataUpdateNewTip" >new</span>
+                            <i class="icon ion-ios-arrow-right color2"></i>
+                        </a>
+
+                        <a class="item item-icon-left item-icon-right" menu-close href="#/home/about">
+                            <i class="icon ion-android-textsms color1"></i>关于我们
+                            <span class="badge badge-assertive" style="right: 50px" ng-if="appNewVersionTip">new</span>
+                            <i class="icon ion-ios-arrow-right color2"></i>
+
+                        </a>
+
+                        <a class="item item-icon-left item-icon-right" menu-close ng-click="logOut()" ng-show="userIsOnline">
+                            <i class="icon ion-code-download color1"></i>注销账户
+                            <i class="icon ion-ios-arrow-right color2"></i>
+                        </a>
+
+                        <a class="item item-icon-left item-icon-right" ng-click="appExit()" ng-if="isAndroid" menu-close>
+                            <i class="icon ion-android-exit color1"></i>退出程序
+                            <i class="icon ion-ios-arrow-right color2"></i>
+                        </a>
+                    </div>
+                </ion-scroll>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+</ion-view>
+
+
